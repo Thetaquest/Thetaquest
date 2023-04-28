@@ -1,0 +1,38 @@
+// .table-box{
+//     width: 85%;
+//     height: 350px;
+//     overflow-y: scroll;
+//     background: #fff;
+//     box-shadow: 0 10px 100px rgba(0,0,0,0.3);
+//   }
+  table{
+    width: 100%;
+  }
+  table,th,td{
+    // border: 1px solid #005277;
+    text-align: center;
+  }
+  thead{
+    // background: #00bcd4;
+    color: rgb(3, 3, 3);
+    
+  }
+  .challengeStatusExp{
+    color: red;
+    font-size: medium;
+    font-style:italic;
+    border: 2px solid red;
+    padding: 10px;
+    border-radius: 25px;
+
+  }
+
+  .challengeStatusLive{
+    color: green;
+    font-size:medium;
+    font-style:italic;
+    border: 2px solid green;
+    padding: 10px;
+    border-radius: 25px;
+  }
+  

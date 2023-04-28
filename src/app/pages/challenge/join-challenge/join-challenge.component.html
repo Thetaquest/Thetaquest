@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-sm-4">
+      <!-- Here I am redirecting to login because, it will again redirect dashboard based on roles -->
+      <h1 class="display-4 text-white font-weight-bold text-center mt-5" routerLink="/login" style="cursor: pointer;">ThetaQuest</h1>
+      <div class="card qz-card qz-card-rounded qz-card-shadow mt-5 mx-4 p-5">
+        <h3>Join Challenge.</h3>
+        <p class="mb-4">Enter game Pin to continue...!</p>
+        <form [formGroup]="joinChallengeForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label class="qz-form-label" for="gamePin">Game Pin:</label>
+            <input type="text" formControlName="gamePin" class="form-control qz-text-input" id="gamePin"
+              aria-describedby="gamePin" placeholder="Enter Game pin here">
+          </div>
+          <button [disabled]="!joinChallengeForm.valid" type="submit" class="btn btn-primary mt-5 btn-block qz-btn qz-bg-blue">Let's go!</button>
+          <button routerLink="/login" class="btn btn-primary mt-3 btn-block qz-btn qz-bg-white-light text-black">Cancel</button>
+        </form>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>

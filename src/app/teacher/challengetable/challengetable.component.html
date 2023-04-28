@@ -1,0 +1,49 @@
+<div class="row m-5">
+  <div class="col">
+    <h2><b>My Challenges</b></h2>
+    <p>Challenge are like matches. Player can join challenge and play challenge.</p>
+  </div>
+</div>
+<div class="row m-5">
+  <!-- Datatable for list of challenges -->
+  <div class="col">
+    <div *ngIf="hosted_quiz_info && hosted_quiz_info.length > 0; else elseBlock" class="qz-card qz-rounded-corner-light">
+      <table class="qz-rounded-corner-light" cellpadding="10 ">
+        <thead class="qz-bg-blue text-white ">
+          <tr>
+            <th>Challenge Name</th>
+            <th>End Date</th>
+            <th>No. of Players</th>
+            <th>View</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of hosted_quiz_info| paginate: config" class='thin-down-border'>
+            <td>{{item.data.challenge_name}}</td>
+            <td><div *ngIf="(item.data.end_date | date:'dd/MM/yyyy') < (currentDate | date:'dd/MM/yyyy'); else elseBlock">
+              <center>
+                <h5 class="challengeStatusExp">Expired</h5></center>
+            </div>
+            <div>
+              <ng-template #elseBlock>
+                <center>
+                <h5 class="challengeStatusLive">Live</h5></center>
+              </ng-template>
+            </div>
+              {{item.data.end_date | date:'medium'}}</td>
+            <td>{{item.data.numberOfPlayers}}</td>                                              <!-- <button type="button" (click)="ChallengeByID(item.data.challenge_id)"> -->
+            <td><a [routerLink]="['/challenge',item.data.challenge_id,'reports','summary']"><button class="btn qz-btn qz-bg-blue text-white" type="button">View</button></a> </td>
+          </tr>
+        </tbody>
+      </table>
+      <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+    </div>
+    <div class="m-5">
+      <!-- This block will show if there are no quizzes available -->
+      <ng-template #elseBlock>
+        <h5>It seems you don't have any challenge hosted!</h5>
+        <p>Why don't you host one? Go to 'Quizzes' tab, Select quiz and press 'Host' button.</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

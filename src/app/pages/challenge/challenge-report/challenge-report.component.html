@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <div class="row qz-bg-blue">
+        <div class="col-0 col-md"></div>
+        <div class="col-12 col-sm-12 col-md-11">
+            <nav class="navbar navbar-dark navbar-expand-lg">
+                <div class="navbar-brand"><h2 class="text-white" routerLink="/" style="cursor: pointer;">ThetaQuest</h2></div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon text-white"></span>
+                </button>
+                <div class="nav-center">
+                    <button style="color: rgb(23, 209, 16);" routerLink="/buytoken">Buytoken</button>
+                    <button style="border-color: 5px solid black;">300.01QEC</button>
+                    <button style="color: rgb(23, 209, 16);" routerLink="/cashout">Cashout</button>
+                </div>
+                <div class="collapse navbar-collapse navbar-default float-right" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto topnav text-white">
+                    <li class="nav-item px-2"><a class="nav-link" routerLink="/teacherdashboard/quiztable">Quizzes</a></li>
+                    <li class="nav-item px-2"><a class="nav-link" routerLink="/teacherdashboard/challengetable">Challenges</a></li>
+                    <li class="nav-item px-2"><a class="nav-link" routerLink="/quiz/create">Create Quiz</a></li>
+                    <li class="nav-item px-2"><button class="btn qz-btn qz-bg-white" (click)="logout()">Logout</button></li>
+                </ul>
+                </div>    
+            </nav>
+        </div>
+        <div class="col-0 col-md"></div>
+    </div>
+    <div class="row qz-bg-blue-dark text-white">
+        <div class="col"></div>
+        <div class="col-6 mt-4 mb-0">
+            <h5 class="qz-text-white-light">Report</h5>
+            <h1 class="my-3">{{challengeData.challenge_name}}</h1>
+            <div class="mt-5 mb-0">
+                <ul class="sub-nav ">
+                    <li class="sub-nav-item mx-1 p-2" [routerLink]="['/challenge',challengeId,'reports','summary']"><h5 class="d-inline" routerLink="challenge/reports/summary">Summary</h5></li>
+                    <li class="sub-nav-item mx-1 p-2" [routerLink]="['/challenge',challengeId,'reports','playerlist']"><h5 class="d-inline">Players({{challengeData.numberOfPlayers || 0}})</h5></li>
+                    <li class="sub-nav-item mx-1 p-2" [routerLink]="['/challenge',challengeId,'reports','']"><h5 class="d-inline">Questions({{challengeData.numberOfQuestions || 0}})</h5></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-4 mx-4 my-2">
+            <ul class="qz-text-white-light qz-text-weight-light challenge-meta-data">
+                <li class="my-1">Challenge <i class="fas fa-trophy text-warning"></i></li>
+                <hr class="qz-bg-white-light">
+                <li class="my-1">Start Date: {{challengeData.start_date | date:'MMM d, y, h:mm:ss a'}}</li>
+                <hr class="qz-bg-white-light">
+                <li class="my-1">End Date: {{challengeData.end_date | date:'MMM d, y, h:mm:ss a'}}</li>
+                <hr class="qz-bg-white-light">
+                <li class="my-1">Hosted by {{challengeData.hosted_by}}</li>
+            </ul>
+        </div>
+        <div class="col"></div>
+    </div>
+    <router-outlet></router-outlet>
+</div>

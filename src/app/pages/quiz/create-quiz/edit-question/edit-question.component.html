@@ -1,0 +1,89 @@
+<div class="d-flex flex-column justify-content-between wrapper">
+  <!-- Input question box -->
+  <div class="row">
+    <input [(ngModel)]="_activeQuestion.title" id="questioninput" class="qz-border m-5" type="text" placeholder="Click to start typing your question here.">  
+  </div>
+  <!-- Dropdowns section -->
+  <div class="row mx-5">
+    <div class="col-6">
+      <div class="dropdown-div mt-3">
+        <label for="answer-mode">Select Answer mode:</label>
+        <select [(ngModel)]="_activeQuestion.questionType" class="mx-2 qz-border" style="width: 40%; height: auto; border-radius: 5px;" name="answer-mode">
+            <option value="singleselect">Single select</option>
+            <option value="multiselect">Multi select</option>
+        </select>
+      </div>
+    </div>
+    <div class="col"></div>
+    <div class="col-4 text-right">
+      <div class="dropdown-div mt-3">
+        <label for="timer">Select time (seconds):</label>
+        <select [(ngModel)]="_activeQuestion.timeLimit" class="mx-2 qz-border" style="width: 40%; height: auto; border-radius: 5px;" name="timer">
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="60">60</option>
+          <option value="90">90</option>
+          <option value="120">120</option>
+          <option value="180">180</option>
+          <option value="240">240</option>
+        </select>
+      </div>
+      <div class="dropdown-div mt-3">
+        <label for="points">Select points:</label>
+        <select [(ngModel)]="_activeQuestion.maxCreditPoint" class="mx-2 qz-border" style="width: 40%; height: auto; border-radius: 5px;" name="points">
+          <option value="100">100</option>
+          <option value="200">200</option>
+          <option value="300">300</option>
+          <option value="400">400</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <!-- Options sections -->
+  <div class="row mx-5 my-5">
+    <div class="col">
+      <!-- Option 1 -->
+      <div class="input-group mb-3">
+        <input [(ngModel)]="_activeQuestion.options.option1" type="text" class="form-control options-input px-4" placeholder="Add Answer 1" aria-label="Text input with checkbox">
+        <div class="input-group-append">
+          <div class="input-group-text">
+            <input (change)="selectAnswer($event)" [checked]="isOptionSelectedAsAnswer('option1')" value="option1" type="checkbox" aria-label="Checkbox for following text input">
+          </div>
+        </div>
+      </div>
+      <!-- Option 3 -->
+      <div class="input-group mb-3">
+        <input [(ngModel)]="_activeQuestion.options.option3" type="text" class="form-control options-input px-4" placeholder="Add Answer 3(Optional)" aria-label="Text input with checkbox">
+        <div class="input-group-append">
+          <div class="input-group-text">
+            <input (change)="selectAnswer($event)" [checked]="isOptionSelectedAsAnswer('option3')" value="option3" type="checkbox" aria-label="Checkbox for following text input">
+          </div>
+        </div>
+      </div>
+      <!-- <input [(ngModel)]="_activeQuestion.options.option3" id="answerinput3" class="options-input my-2 px-4" type="text" placeholder="Add Answer 3(Optional)"> -->
+    </div>
+    <div class="col">
+      <!-- Option 2 -->
+      <div class="input-group mb-3">
+        <input [(ngModel)]="_activeQuestion.options.option2" type="text" class="form-control options-input px-4" placeholder="Add Answer 2" aria-label="Text input with checkbox">
+        <div class="input-group-append">
+          <div class="input-group-text">
+            <input (change)="selectAnswer($event)" [checked]="isOptionSelectedAsAnswer('option2')" value="option2" type="checkbox" aria-label="Checkbox for following text input">
+          </div>
+        </div>
+      </div>
+      <!-- Option 4 -->
+      <div class="input-group mb-3">
+        <input [(ngModel)]="_activeQuestion.options.option4" type="text" class="form-control options-input px-4" placeholder="Add Answer 4(Optional)" aria-label="Text input with checkbox">
+        <div class="input-group-append">
+          <div class="input-group-text">
+            <input (change)="selectAnswer($event)" [checked]="isOptionSelectedAsAnswer('option4')" value="option4" type="checkbox" aria-label="Checkbox for following text input">
+          </div>
+        </div>
+      </div>
+      <!-- <input [(ngModel)]="_activeQuestion.options.option2" id="answerinput2" class="options-input my-2 px-4" type="text" placeholder="Add Answer 2"> -->
+      <!-- <input [(ngModel)]="_activeQuestion.options.option4" id="answerinput4" class="options-input my-2 px-4" type="text" placeholder="Add Answer 4(Optional)">    -->
+    </div>
+  </div>
+</div>

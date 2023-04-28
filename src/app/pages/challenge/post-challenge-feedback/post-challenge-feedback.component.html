@@ -1,0 +1,67 @@
+<div class='container-fluid'>
+  <div class="row">
+    <div class="col">
+      <h1 class="mt-5"> Successfully Submitted Quiz !</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2 class="mt-3">Feedback Form</h2>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col"></div>
+    <div class="col-6">
+      <div class="panel panel-primary">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="text-center">Parameter</th>
+                <th>Rating</th>
+                <!-- <th>Rating No.</th> -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of items">
+                <td class="text-center">
+                  {{item.parameter}}
+                </td>
+                <td>
+                    <app-rating [rating]='item.rating' [itemId]='item.id' (ratingClick)='ratingComponentClick($event)'></app-rating>
+                </td>
+                <!-- <td>
+                  {{item.rating}} Stars
+                </td> -->
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+  
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+      <button type="button" class="btn qz-btn qz-bg-purple-light" (click)="skipFeedback();">
+        Skip Feedback
+      </button>
+      <button type="button" class="btn qz-btn float-right qz-bg-white" (click)="submitFeedback();">
+        Submit Feedback
+      </button>
+  
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
+
+<div *ngIf="isError" class="alert alert-danger alert-dismissible mt-alerts fade show mx-4 qz-border qz-card-shadow" role="alert">
+  <h4 class="alert-heading">Error !</h4>
+  <p>{{error_message}}</p>
+  <button (click)="dismissErrorAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>

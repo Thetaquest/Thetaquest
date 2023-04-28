@@ -1,0 +1,48 @@
+<div  class="row qz-bg-blue">
+    <div class="col"></div>
+    <!--- This block will display if challenge has ended -->
+    <div class="col-9 m-4">
+        <h3 class="text-white">Hello {{challengeData.player_name}} !</h3>
+        <div *ngIf="endDate < currentDate; else elseBlock"class="row py-3 px-2">
+            <div class="col"></div>
+            <div class="col-3 m-2 p-3 d-flex align-items-center">
+                <div class="card qz-border qz-rounded-corner-light text-black my-3 p-4 data-card">
+                    <h2 class="text-center">{{challengeData.score}}</h2>
+                    <p class="text-center">Your score</p>
+                            <!-- <h5>Player name{{challengeData.player_name}}</h5> -->
+                            
+                            <!-- <h5>Correct answers{{challengeData.correct_answers}}</h5>
+                            <h5>Wrong Answers{{challengeData.wrong_answers}}</h5> -->        
+                </div>
+            </div>
+            <div class="col-3 m-2 p-3 d-flex align-items-center">
+                <div class="card qz-border qz-rounded-corner-light text-black my-3 p-4 data-card">
+                    <h2 class="text-center">{{challengeData.correct_answers}}</h2>
+                    <p class="text-center">No. of correct answers</p>
+                            <!-- <h5>Player name{{challengeData.player_name}}</h5> -->
+                            
+                            <!-- <h5>Correct answers{{challengeData.correct_answers}}</h5>
+                            <h5>Wrong Answers{{challengeData.wrong_answers}}</h5> -->        
+                </div>
+            </div>
+            <div class="col-3 m-2 p-3 d-flex align-items-center">
+                <div class="card qz-border qz-rounded-corner-light text-black my-3 p-4 data-card">
+                    <h2 class="text-center">{{challengeData.wrong_answers}}</h2>
+                    <p class="text-center">No. of wrong answers</p>
+                            <!-- <h5>Player name{{challengeData.player_name}}</h5> -->
+                            
+                            <!-- <h5>Correct answers{{challengeData.correct_answers}}</h5>
+                            <h5>Wrong Answers{{challengeData.wrong_answers}}</h5> -->        
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+        <!-- This block will show if challenge has not ended -->
+        <ng-template #elseBlock>
+            <center>
+          <h3>Hey Sorry!! Come back later</h3>
+          <p>See you when the challenge ends</p></center>
+        </ng-template>
+    </div>
+    <div class="col"></div>
+</div>

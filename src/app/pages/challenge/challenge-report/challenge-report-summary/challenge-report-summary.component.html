@@ -1,0 +1,138 @@
+<div class="row qz-bg-blue">
+    <div class="col"></div>
+    <div class="col-6 m-4">
+        <div class="card qz-card-shadow qz-border qz-rounded-corner-light text-black my-3">
+            <div class="row py-3 px-2">
+                <div class="col-3 ml-3 p-3 d-flex align-items-center">
+                    <div class="circle-div mx-auto d-flex flex-column align-items-center justify-content-center">
+                        <div><h1>{{challengeData.numberOfPlayers}}</h1></div>
+                        <div>players</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h3>Invite more players!</h3>
+                    <p>Invite players by sharing the URL or game PIN. <br>
+                    Players can join this challenge up until the deadline.</p>
+                    <div class="form-group">
+                        <input [(ngModel)]="gameURL" class="qz-text-input" type="text" style="width: 60%;" name="gameURL" id="gameURL">
+                        <button class="qz-btn qz-bg-blue text-white mx-3">Copy URL</button>
+                    </div>
+                    Game PIN: <b>{{challengeData.game_pin}}</b>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4 m-4">
+        <div class="card qz-card-shadow qz-border qz-rounded-corner-light qz-bg-blue-light my-3">
+            <div class="m-5 d-flex flex-row align-items-center justify-content-around">
+                <button class="qz-btn qz-bg-purple text-white mx-3">Change Deadline</button>
+                <button (click)="endChallenge()" class="qz-btn">End Now</button>
+            </div>
+        </div>
+    </div>
+  <div class="col"></div>
+</div>
+
+<div *ngIf="numberOfPlayer > 0 && totalfeedbacks > 0" class="row qz-bg-blue">
+    <div class="col-3 mt-4 ml-5">
+        <div class="ml-5">
+            <div class="ml-5">
+                <!-- <div class="card qz-card-shadow ml-4" style="width: 100%; height: 48vh;"> -->
+                    <div style="text-align: center;" class="chart-container">
+                        <h5 style="color: white;">Question Quality </h5>
+                        <canvas class="mt-1" id="can1" style=" margin-left: 8px; width: 100px; height: 100px;" id="doughnut1"></canvas>
+                    </div>
+                <!-- </div>  -->
+            </div>
+        </div>   
+    </div>
+    <div class="col-3 mt-4 ml-5">
+        <div class="ml-5">
+            <div class="ml-5">
+                <!-- <div class="card qz-card-shadow ml-4" style="width: 100%; height: 48vh;"> -->
+                    <div style="text-align: center;" class="chart-container">
+                        <h5 style="color: white;">Overall Experience </h5>
+                        <canvas class="mt-1" style=" margin-left: 8px; width: 100px; height: 100px;" id="doughnut2">
+                        </canvas>
+                    </div>
+                <!-- </div>  -->
+            </div>
+        </div>   
+    </div>
+    <div class="col-3 mt-4 ml-5">
+        <div class="ml-5">
+            <div class="ml-5">
+                <!-- <div class="card qz-card-shadow ml-4" style="width: 100%; height: 48vh;"> -->
+                    <div style="text-align: center;" class="chart-container">
+                        <h5 style="color: white;">Difficulty level</h5>
+                        <canvas class="mt-1" style=" margin-left: 8px; width: 100px; height: 100px;" id="doughnut3"></canvas>
+                    </div>
+                <!-- </div>  -->
+            </div>
+        </div>   
+    </div>
+</div>
+
+<!-- <div class="row qz-bg-blue">
+     <div class="col-6 mt-5 ml-5">
+       <div class="card qz-card-shadow" style="width: 100%; height: 48vh;"> -->
+<div *ngIf="numberOfPlayer > 0" class="row qz-bg-blue-light">
+    <div class="col"></div>
+     <div class="col-5 m-4">
+       <div class="card qz-card-shadow qz-border qz-rounded-corner-light" style="width: 100%; height: 48vh;">
+        <div style="text-align: left;">
+            <h5 class="mt-2 ml-2">Scores of Students</h5>
+            <div class="chart-container ml-3">
+                <canvas id="bar"></canvas>
+            </div>
+        </div>
+       </div>
+     </div>
+     <div class="col-5 m-4">
+        <div class="card qz-card-shadow qz-border qz-rounded-corner-light" style="width: 100%; height: 48vh;">
+            <div style="text-align: left;">
+                <h5 class="mt-2 ml-2">Analysis of Questions</h5>
+            <div class="chart-container ml-3">
+                <canvas id="line"></canvas>
+            </div>
+            </div>
+           </div>
+    </div>
+    <div class="col"></div>
+</div>
+
+<!-- <div class="row qz-bg-blue">
+    <div class="col-5 mt-4 ml-5">
+        <div class="card qz-card-shadow" style="width: 100%; height: 48vh;">
+            <div style="text-align: left;">
+                <h5 class="mt-2 ml-2">Analysis of Questions</h5>
+            <div class="chart-container ml-3">
+                <canvas id="line"></canvas>
+            </div>
+            </div>
+           </div>
+    </div>
+
+    <div class="col-3 mt-4 ml-2">
+        <div class="card qz-card-shadow" style="width: 100%; height: 48vh;">
+            <div style="text-align: left;">
+                <h5 class="mt-2 ml-2">Average no of questions answered</h5>
+            <div style="text-align: center; margin-top: 350px;" class="chart-container ml-3 mt-5">
+                <span style="font-size: 100px;">{{avgcorrectans}}</span>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-3 mt-4 ml-2">
+        <div class="card qz-card-shadow" style="width: 100%; height: 48vh;">
+            <div style="text-align: left;">
+                <h5 class="mt-2 ml-2">Average no of questions unanswered</h5>
+                <div style="text-align: center; margin-top: 350px;" class="chart-container ml-3 mt-5">
+                    <span style="font-size: 100px;">{{avgunanswered}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div> -->

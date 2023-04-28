@@ -1,0 +1,46 @@
+
+<div class="row m-5">
+  <div class="col-sm-8">
+    <h2><b>My Quizzes</b></h2>
+    <p>Quizzes are like question banks. You can create once and host multiple times!</p>
+  </div>
+  <div class="col"></div>
+  <div class="col-sm-2 my-3 float-right">
+    <button class="btn qz-btn qz-bg-blue text-white" routerLink="/quiz/create">Create Quiz</button>
+  </div>
+</div>
+<div class="row m-5">
+  <!-- Datatable for list of quizzes -->
+  <div class="col">
+    <div *ngIf="quiz_info && quiz_info.length > 0; else elseBlock" class="qz-card table-box qz-rounded-corner-light">
+      <table cellpadding="10 ">
+        <thead class="qz-bg-blue text-white">
+          <tr>
+            <th>Quiz Name</th>
+            <th>Created On</th>
+            <th>No. of Questions</th>
+            <th>Host challenge</th>
+            <th>View</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of quiz_info | paginate: config" class='thin-down-border'>
+            <td>{{item.title}}</td>
+            <td>{{item.created_at | date:'medium'}} </td>
+            <td>{{item.questions.length}} </td>
+            <td><a [routerLink]="['/quiz/host/',item._id]"><button class="btn qz-btn qz-bg-green text-white" type="button">Host</button></a> </td>
+            <td><a routerLink="/quiz/displayQuiz"><button class="btn qz-btn qz-bg-blue text-white" type="button" (click)="QuizByID(item._id)">View</button></a> </td>
+          </tr>
+        </tbody>
+      </table>
+      <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+    </div>
+    <!-- This block will show if there are no quizzes available -->
+    <div class="m-5">
+      <ng-template #elseBlock>
+        <h5>It seems you haven't created quiz yet!</h5>
+        <p>Why don't you create one? Click on 'Create Quiz' Button.</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

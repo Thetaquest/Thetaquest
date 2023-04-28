@@ -1,0 +1,107 @@
+
+.nav-center {
+    text-align: center;
+    flex: 1;
+  }
+  
+  .nav-center button {
+    color: #333;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+
+
+section{
+    background-color: #f2f2f2;
+}
+
+
+nav{
+    width: 100%;
+  }
+  nav ul li a{
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: all 0.1s ease;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    color: #111;
+    background: #fff;
+  }
+  
+  .illustrations{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+
+
+// nav{
+//     // display: flex;
+//     width: 100%;
+//     // align-items: center;
+//     // justify-content: space-between;
+//     // padding: 0 50px 0 100px;
+//     // flex-wrap: wrap;
+//   }
+//   // nav .logo{
+//   //   color: #fff;
+//   // }
+//   // nav ul{
+//   //   display: flex;
+//   //   flex-wrap: wrap;
+//   //   list-style: none;
+//   // }
+//   // nav ul li{
+//   //   // margin: 0 5px;
+//   // }
+//   nav ul li a{
+//     color: #f2f2f2;
+//     text-decoration: none;
+//     font-size: 18px;
+//     // font-weight: 500;
+//     // padding: 8px 15px;
+//     border-radius: 5px;
+//     letter-spacing: 1px;
+//     transition: all 0.1s ease;
+//   }
+//   nav ul li a.active,
+//   nav ul li a:hover{
+//     color: #111;
+//     background: #fff;
+//   }
+
+  input[type="radio"] {
+    margin-right: 5px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+
+.jumbotron {
+    margin-top: 5%;
+    width: 80%;
+    height: 200px;
+    border: 1px solid rgb(247, 31, 67);
+    background: white;
+    text-align: center;
+}
+
+.paymentAmt {
+    font-size: 60px;
+}
+
+.centered {
+    text-align: center;
+}
+.rounded {
+    border-radius: 1rem;
+}

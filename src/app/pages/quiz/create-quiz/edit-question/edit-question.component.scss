@@ -1,0 +1,33 @@
+.wrapper{
+    min-height: 93vh;
+    max-height: 93vh;
+    height: 93vh;
+    overflow-y:hidden;
+    overflow-x:hidden;
+}
+#questioninput{
+    object-position: center;
+    height: 3.5em;
+    width: 95%;
+    font-size: 2em;
+    text-align: center;
+    border-radius: 0.75em;
+    outline: none;
+}
+.dropdown-div{
+    font-size: 1.2em;
+}
+
+// .options-div {
+//     border-radius: 0.6em;
+// }
+
+.options-input{
+    object-position: center;
+    height: 5rem;
+    width: 90%;
+    font-size: 1.5em;
+    text-align: left;
+    outline: none;
+    //border-radius: 0.6em;
+}

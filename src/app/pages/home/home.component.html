@@ -1,0 +1,202 @@
+<div class="container-fluid">
+  <div class="row qz-bg-blue">
+    <div class="col"></div>
+    <div class="col-10">
+      <nav class="navbar navbar-dark navbar-expand-lg">
+        <div class="navbar-brand">
+          <h2 class="text-white">ThetaQuest</h2>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon text-white"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-default float-right" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto topnav text-white">
+            <li style="background-color: rgb(25, 226, 25); border-radius: 10px;" class="nav-item px-2"><a class="nav-link" routerLink="/challenge/join-challenge">Play</a></li>
+            <!-- I am using '/login' quizzes, because, if user already logged in then it will redirect to dashboard based on role -->
+            <li class="nav-item px-2"><a class="nav-link" routerLink="/login">Quizzes</a></li>
+            <!-- <li><a href="#about">Leaderboard</a></li> -->
+            <li class="nav-item px-2"><a class="nav-link " routerLink="">About</a></li>
+            <li class="nav-item px-2"><a class="nav-link" routerLink="">Contact</a></li>
+            <li class="nav-item px-2"><button class="btn qz-btn qz-bg-blue text-white" routerLink="/login">Log
+                in</button></li>
+            <li class="nav-item px-2"><button class="btn qz-btn qz-bg-white" routerLink="/register">Sign up</button>
+            </li>
+            <!-- <li><a routerLink="teacherprofile">Profile</a></li> -->
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="col"></div>
+  </div>
+  <div class="row">
+    <div class="col-xl-1"></div>
+
+    <section class="page-section">
+      <section class="first-section">
+        <div class="banner">
+          <div class="banner-body">
+            <h2 class="banner-title">
+              Make learning awesome
+            </h2>
+            <p class="banner-description">
+              ThetaQuest delivers engaging learning to billions
+            </p>
+            <button class="banner-button">
+              <a routerLink="/register">
+                Sign up for free
+              </a>
+            </button>
+          </div>
+          <img src="../../../assets/img/img1.jpeg" alt="" class="banner-image" />
+        </div>
+        <div class="banner">
+          <div class="banner-body">
+            <h2 class="banner-title">
+              Explore content
+            </h2>
+            <p class="banner-description">
+              Explore content and join one of the world's largest educator communities.
+            </p>
+            <button class="banner-button">
+              <a routerLink="/challenge/join-challenge">
+                Check public quizes
+              </a>
+            </button>
+          </div>
+          <img src="../../../assets/img/img2.jpeg" alt="" class="banner-image" />
+        </div>
+      </section>
+      <section class="second-section">
+        <div class="section-background"></div>
+        <div class="info">
+          <div class="info-body">
+            <h2 class="info-title">
+              ThetaQuest at school
+            </h2>
+            <p class="info-description">
+              Engaging group and distance learning for teachers and students.
+            </p>
+            <a href="/" class="info-link">
+              Learn more &gt;
+            </a>
+          </div>
+        </div>
+        <div class="info">
+          <div class="info-body">
+            <h2 class="info-title">
+              ThetaQuest at work
+            </h2>
+            <p class="info-description">
+              Deliver training, presentations, meetings and events in-person or on any video conferencing platform.
+            </p>
+            <a href="/" class="info-link">
+              Learn more &gt;
+            </a>
+          </div>
+        </div>
+        <div class="info">
+          <div class="info-body">
+            <h2 class="info-title">
+              ThetaQuest at home
+            </h2>
+            <p class="info-description">
+              Learning Apps and games for family fun or home study.
+            </p>
+            <a href="/" class="info-link">
+              Learn more &gt;
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="third-section">
+        <h1>How does ThetaQuest work?</h1>
+        <div class="card-container">
+          <div class="card">
+            <img src="../../../assets/img/img3.svg" alt="" />
+            <div class="card-body">
+              <h1>Create</h1>
+              <p>
+                It only takes minutes to create a learning game or trivia quiz on
+                any topic, in any language.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="../../../assets/img/img4.svg" alt="" />
+            <div class="card-body">
+              <h1>Host or share</h1>
+              <p>
+                Host a live game with questions on a big screen or share a game
+                with remote players.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="../../../assets/img/img5.svg" alt="" />
+            <div class="card-body">
+              <h1>Play</h1>
+              <p>
+                Game on! Join the challenge with a PIN provided by the host and answer
+                questions on your device.
+              </p>
+            </div>
+          </div>
+        </div>
+        <a routerLink="/challenge/join-challenge">
+          <div class="card-button">
+            Play ThetaQuest to see how it works.&nbsp;
+            <a routerLink="/challenge/join-challenge">Explore our public quizes</a>
+          </div>
+        </a>
+      </section>
+
+      <!--Any section should be written here-->
+
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-row">
+          <div class="footer-column">
+            <h4>About</h4>
+            <ul>
+              <li><a href="/">Company</a></li>
+              <li><a href="/">Service</a></li>
+              <li><a href="/">Blog</a></li>
+              <li><a href="/">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Application</h4>
+            <ul>
+              <li><a href="/">At home</a></li>
+              <li><a href="/">At school</a></li>
+              <li><a href="/">At work</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Terms and conditions</h4>
+            <ul>
+              <li><a href="/">Terms and conditions</a></li>
+              <li><a href="/">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Follow us</h4>
+            <div class="footer-social-links">
+              <a href="/"><i class="fab fa-facebook"></i></a>
+              <a href="/"><i class="fab fa-twitter"></i></a>
+              <a href="/"><i class="fab fa-instagram"></i></a>
+              <a href="/"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--End footer-->
+
+
+    
+</div>

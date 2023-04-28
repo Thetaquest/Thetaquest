@@ -1,0 +1,83 @@
+
+    <div class="container-fluid text-center qz-bg-blue">
+
+        <h4 class="heading_text">ThetaQuest</h4>
+
+      </div>
+      <br>
+      <!-- <ng-container *ngFor="let item of quiz_info"> -->
+      <div class="container-fluid" *ngFor="let question of filteredQuestions;">
+        <div class="row">
+          <div class="col-sm-2">
+            <!-- <h3>Timer</h3> -->
+            <!-- <div id="clock"></div> -->
+            <div *ngIf="config.duration" class="badge badge-info float-right">Time: {{ellapsedTime}} / {{duration}}</div>
+
+          </div>
+          <div class="col-sm-8 text-center">
+              <!-- iterate the `tableData` array -->
+              <!-- <ng-container *ngFor="let data of item.questions; let i= index"> -->
+            <h3 class="font-weight-normal">{{pager.index + 1}}. {{question.title}}
+              <!-- <span [innerHTML]="question.title"></span> -->
+            </h3>
+            <br><br>
+              <div *ngIf="question.questionType == 'multiselect'">
+                <div class="card cd text-left">
+                  <label><input type="checkbox" name="optradio" value="option1" id="1" (change)="onSelectFromMultiSelectQuestion(question, $event);"> {{question.options.option1}}</label>
+                </div>
+
+                <div class="card cd text-left">
+                    <label><input type="checkbox" name="optradio" value="option2" id="2" (change)="onSelectFromMultiSelectQuestion(question, $event);"> {{question.options.option2}}</label>
+                </div>
+
+                <div class="card cd text-left">
+                    <label><input type="checkbox" name="optradio" value="option3" id="3"(change)="onSelectFromMultiSelectQuestion(question, $event);" > {{question.options.option3}}</label>
+                </div>
+
+                <div class="card cd text-left">
+                    <label><input type="checkbox" name="optradio" value="option4" id="4"(change)="onSelectFromMultiSelectQuestion(question, $event);" > {{question.options.option4}}</label>
+                </div>
+              </div>    
+              <div *ngIf="question.questionType == 'singleselect'">
+                <div class="card cd text-left">
+                  <label><input type="radio" name="optradio" value="option1" id="1" (change)="onSelectFromSingleSelectQuestion(question, $event);"> {{question.options.option1}}</label>
+                </div>
+
+                <div class="card cd text-left">
+                    <label><input type="radio" name="optradio" value="option2" id="2" (change)="onSelectFromSingleSelectQuestion(question, $event);"> {{question.options.option2}}</label>
+                </div>
+
+                <div class="card cd text-left">
+                    <label><input type="radio" name="optradio" value="option3" id="3"(change)="onSelectFromSingleSelectQuestion(question, $event);" > {{question.options.option3}}</label>
+                </div>
+
+                <div class="card cd text-left">
+                    <label><input type="radio" name="optradio" value="option4" id="4"(change)="onSelectFromSingleSelectQuestion(question, $event);" > {{question.options.option4}}</label>
+                </div>
+              </div>    
+            <br><br>
+            <!-- <button type="button" class="btn btn-quiz btn-primary float-left qz-bg-purple">
+              Clear Selection
+            </button> -->
+            <button [class.disabled]="isCurrentQuestionLastQuestion()" type="button" class="btn qz-btn qz-bg-purple float-right text-white" (click)="goTo(pager.index + 1);">
+                Next Question
+            </button>
+            
+                <!-- </ng-container> -->
+          </div>
+          <div class="col-sm-2">
+            <label for="question_number" class="question_number float-center">Question {{pager.index + 1}} of {{pager.count}}</label><br>
+            <button type="button" class="btn qz-btn qz-bg-red text-white" style="width: 70%;" (click)="onSubmit();">Submit</button>
+          </div>
+        </div>
+      </div>
+        <!-- </ng-container> -->
+
+<div *ngIf="isError" class="alert alert-danger alert-dismissible mt-alerts fade show mx-4 qz-border qz-card-shadow" role="alert">
+  <h4 class="alert-heading">Error !</h4>
+  <p>{{error_message}}</p>
+  <button (click)="dismissErrorAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+

@@ -1,0 +1,91 @@
+<div class="container-fluid main-container">
+    <div class="row">
+        <div class="col-2">
+            <h3 class="text-white my-2 mx-3 font-weight-bold" routerLink="/">
+              ThetaQuest
+            </h3>
+        </div>
+        <div class="col-4 my-2">
+          <form class="form-inline m-0 p-0">
+            <input [(ngModel)]="quiz.title" [ngModelOptions]="{standalone: true}" type="text" class="form-control qz-border" id="quiz-title" placeholder="Enter title for quiz" style="border-radius: 8px;">
+            <button id="quizSettingsBtn" class="qz-btn qz-bg-purple-light text-black mx-3 my-0" style="color: black;" data-toggle="modal" data-target="#saveQuizModal"><i class="fas fa-edit"></i></button>
+          </form>
+        </div>
+        <div class="col"></div>
+        <div class="col-3">
+            <div class="float-right">
+                <button class="qz-btn qz-bg-red text-white mx-3 my-2" routerLink="/teacherdashboard/quiztable">Exit</button>
+                <button (click)="onClickSave()" id="saveQuizBtn" class="qz-btn qz-bg-green text-white mr-4 my-2">Save</button>
+            </div>
+        </div>
+        
+    </div>
+    <div class="row d-flex flex-sm-column-reverse flex-md-row">
+        <div class="col px-0" style="height: 100%;">
+            <app-sidebar-questions [questions]="questions" (addQuestion)="onAddQuestion()" (setActiveQuestion)="setActiveQuestion($event)" (deleteQuestion)="onDeleteQuestion($event)"></app-sidebar-questions>
+        </div>
+        <div class="col-12 col-sm-8 col-md-9 col-lg-10 col-xl-10 px-5 qz-bg-blue-light">
+            <app-edit-question [activeQuestion]="activeQuestion$"></app-edit-question>
+        </div>
+    </div>
+</div>
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#saveQuizModal" data-whatever="@mdo">Open modal for @mdo</button> -->
+<div class="modal fade " id="saveQuizModal" tabindex="-1" aria-labelledby="saveQuizModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content qz-card qz-card-shadow">
+        <div class="modal-header">
+          <h5 class="modal-title" id="saveQuizModalLabel">Create Quiz</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- <form> -->
+            <div class="form-group">
+              <label for="quiz-title" class="col-form-label qz-form-label">Title:</label>
+              <input [(ngModel)]="quiz.title" type="text" class="form-control qz-text-input" id="quiz-title" placeholder="Enter title for quiz...">
+            </div>
+            <div class="form-group">
+              <label for="quiz-category" class="col-form-label qz-form-label">Category:</label> <br>
+              <!-- <input [(ngModel)]="quiz.category" type="text" class="form-control qz-text-input" id="quiz-category" placeholder="Enter category for quiz..."> -->
+              <select [(ngModel)]="quiz.category" class="mx-2 qz-border qz-text-input" style="width: 95%; height: 40px; border-radius: 8px;" name="quiz-category">
+                <option value="Default">Default</option>
+                <option value="History">History</option>
+                <option value="Technology">Technology</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Science">Science</option>
+                <option value="General Knowledge">General Knowledge</option>
+                <option value="Sports">Sports</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="quiz-description" class="col-form-label qz-form-label">Description:</label>
+              <textarea [(ngModel)]="quiz.description" class="form-control qz-text-input" id="quiz-description" placeholder="Enter description for quiz..."></textarea>
+            </div>
+          <!-- </form> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn qz-btn qz-bg-red text-white" data-dismiss="modal">Close</button>
+          <button type="button" class="btn qz-btn qz-bg-green text-white" data-dismiss="modal">Proceed</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<div *ngIf="isError" class="alert alert-danger alert-dismissible mt-alerts fade show mx-4 qz-border qz-card-shadow" role="alert">
+  <h4 class="alert-heading">Error !</h4>
+  <p>{{errorMessage}}</p>
+  <button (click)="dismissErrorAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div *ngIf="isSuccess" class="alert alert-success alert-dismissible mt-alerts fade show mx-4 qz-border qz-card-shadow" role="alert">
+  <h4 class="alert-heading">Success !</h4>
+  <p>Quiz created successfully! You will automatically get redirected...</p>
+  <button  type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>

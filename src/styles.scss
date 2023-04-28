@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
+// @import '../node_modules/open-iconic/font/css/open-iconic-bootstrap.css';
+@import '~open-iconic/font/css/open-iconic-bootstrap.css';
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+html, body{
+    font-family: 'Rubik', sans-serif;
+    background-color: #fa3556;
+}
+
+// color section
+.qz-bg-white{
+    background-color: #FFFFFF;
+}
+
+.qz-bg-purple{
+    background-color: #6311BA;
+}
+
+.qz-bg-purple-light{
+    background-color: #EFE3FC;
+}
+
+.qz-bg-purple-dark{
+    background-color: #2F0859;
+}
+
+.qz-bg-blue-dark{
+    background-color: #082D59;
+}
+
+.qz-bg-blue{
+    background-color: #fa3556;
+}
+
+.qz-bg-blue-light{
+    // background-color: #b2c4d6;
+    background-color: #E3EFFC;
+}
+
+.qz-bg-green{
+    background-color: #0FA81A;
+}
+
+.qz-bg-green-light{
+    background-color: #E3FCE5;
+}
+
+.qz-bg-red{
+    background-color: #BA1130;
+}
+
+.qz-bg-green-light{
+    background-color: #FCE3E8;
+}
+
+.qz-bg-white-light{
+    background-color: rgba(255, 255, 255, 0.65);
+}
+
+.qz-bg-light-gray{
+    background-color: #C4C4C4;
+}
+// End of color section
+
+.text-black{
+    color: black;
+}
+
+.qz-text-purple {
+    color: #6311BA;
+}
+
+.qz-text-blue {
+    color: #fa3556;
+}
+
+.qz-text-green {
+    color: #0FA81A;
+}
+
+.qz-text-white-light {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.qz-text-weight-light {
+    font-weight: 300;
+}
+
+.qz-rounded-corner {
+    border-radius: 24px;
+}
+
+.qz-rounded-corner-light {
+    border-radius: 12px;
+}
+
+.qz-border {
+    border: 3px solid #000000;
+}
+
+.qz-card {
+    // border-radius: 24px;
+    border: 3px solid #000000;
+    background-color: #d7e2ee;
+    color: black;
+}
+
+.qz-card-rounded {
+    border-radius: 24px;
+}
+
+.qz-card-shadow {
+    box-shadow: 4px 4px 65px 32px rgba(0, 0, 0, 0.25);
+}
+
+.qz-form-label {
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.qz-text-input {
+    border-radius: 8px;
+    border: 3px solid #000000;
+    background-color: #C4C4C4;
+}
+
+.qz-btn {
+    border-radius: 8px;
+    border: 3px solid #000000;
+    font-weight: bold;
+    font-size: large;
+    outline: none;
+}
+
+
+.mt-alerts {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+}

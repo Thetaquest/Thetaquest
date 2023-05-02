@@ -1,47 +1,52 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col"></div>
-        <div class="col-12 col-sm-9 col-md-7 col-lg-5 col-xl-4">
-            <h1 class="display-4 text-white font-weight-bold text-center mt-5" routerLink="/" style="cursor: pointer;">ThetaQuest</h1>
 
-            <div *ngIf="error_message" class="alert alert-danger alert-dismissible fade show mx-4 qz-border qz-rounded-corner qz-card-shadow" role="alert">
-                <h4 class="alert-heading">Error!</h4>
-                <p>{{error_message}}</p>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
+
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div class="hero-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-12 col-sm-9 col-md-7 col-lg-5 col-xl-4">
+                    <h1 class="display-4 font-weight-bold text-center mt-5" routerLink="/" style="cursor: pointer; color: #004a54;">ThetaQuest</h1>
+                    <div *ngIf="error_message" class="alert alert-danger alert-dismissible fade show mx-4 qz-border qz-rounded-corner qz-card-shadow" role="alert">
+                        <h4 class="alert-heading">Error!</h4>
+                        <p>{{error_message}}</p>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+        
+                    <div class="card qz-card qz-card-rounded qz-card-shadow mt-2 mx-4 p-5">
+                        <h3>Log in.</h3>
+                        <p class="mb-4">Hello there! login to continue...</p>
+        
+                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                            <div class="form-group">
+                                <label class="qz-form-label" for="exampleInputEmail1">Your e-mail</label>
+                                <input type="email" formControlName="email" [class.is-invalid]="email.invalid && email.touched"
+                                    [class.is-valid]="email.valid && email.touched" class="form-control qz-text-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="name@domain.com">
+                                <div *ngIf="email.invalid && email.touched">
+                                    <small class="text-danger mx-2" *ngIf="email.errors?.required">E-mail ID is required.</small>
+                                    <small class="text-danger mx-2" *ngIf="email.errors?.email">Enter valid E-mail ID.</small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="qz-form-label" for="exampleInputPassword1">Password</label>
+                                <input type="password" formControlName="password" [class.is-invalid]="password.invalid && password.touched"
+                                    [class.is-valid]="password.valid && password.touched" class="form-control qz-text-input" id="exampleInputPassword1" placeholder="at least 8 characters">
+                                <div *ngIf="password.invalid && password.touched">
+                                    <small class="text-danger mx-2" *ngIf="password.errors?.required">Password is required.</small>
+                                    <small class="text-danger mx-2" *ngIf="password.errors?.minlength">Password must be at least 8 characters.</small>
+                                </div>
+                            </div>
+                            <div class="mt-3 float-right">
+                                <p>Not registered yet?&nbsp;<a class="font-weight-bold" routerLink="/register">Create Account</a></p>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-5 btn-block qz-btn qz-bg-blue">Log in</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col"></div>
             </div>
-
-            <div class="card qz-card qz-card-rounded qz-card-shadow mt-2 mx-4 p-5">
-                <h3>Log in.</h3>
-                <p class="mb-4">Hello there! login to continue...</p>
-
-                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                    <div class="form-group">
-                        <label class="qz-form-label" for="exampleInputEmail1">Your e-mail</label>
-                        <input type="email" formControlName="email" [class.is-invalid]="email.invalid && email.touched"
-                            [class.is-valid]="email.valid && email.touched" class="form-control qz-text-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="name@domain.com">
-                        <div *ngIf="email.invalid && email.touched">
-                            <small class="text-danger mx-2" *ngIf="email.errors?.required">E-mail ID is required.</small>
-                            <small class="text-danger mx-2" *ngIf="email.errors?.email">Enter valid E-mail ID.</small>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="qz-form-label" for="exampleInputPassword1">Password</label>
-                        <input type="password" formControlName="password" [class.is-invalid]="password.invalid && password.touched"
-                            [class.is-valid]="password.valid && password.touched" class="form-control qz-text-input" id="exampleInputPassword1" placeholder="at least 8 characters">
-                        <div *ngIf="password.invalid && password.touched">
-                            <small class="text-danger mx-2" *ngIf="password.errors?.required">Password is required.</small>
-                            <small class="text-danger mx-2" *ngIf="password.errors?.minlength">Password must be at least 8 characters.</small>
-                        </div>
-                    </div>
-                    <div class="mt-3 float-right">
-                        <p>Not registered yet?&nbsp;<a class="font-weight-bold" routerLink="/register">Create Account</a></p>
-                    </div>
-                    <button type="submit" class="btn btn-primary mt-5 btn-block qz-btn qz-bg-blue">Log in</button>
-                </form>
-            </div>
-        </div>
-        <div class="col"></div>
-    </div>
-</div>
+        </div>    </div>
+  </section><!-- End Hero -->

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BgColorService } from 'src/app/services/bg-color.service';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 @Component({
   selector: 'app-home',

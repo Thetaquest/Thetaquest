@@ -13,7 +13,7 @@ import { EditQuestionComponent } from './pages/quiz/create-quiz/edit-question/ed
 import { HomeComponent } from './pages/home/home.component';
 import { SidebarQuestionsComponent } from './pages/quiz/create-quiz/sidebar-questions/sidebar-questions.component';
 import { QuestionCardComponent } from './pages/quiz/create-quiz/question-card/question-card.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ChallengeReportComponent } from './pages/challenge/challenge-report/challenge-report.component';
 import { ChallengeReportSummaryComponent } from './pages/challenge/challenge-report/challenge-report-summary/challenge-report-summary.component';
 import { PlayQuizComponent } from './pages/quiz/play-quiz/play-quiz.component';
@@ -22,7 +22,7 @@ import { DlDateTimeDateModule, DlDateTimePickerModule } from 'angular-bootstrap-
 
 import { CommonModule } from '@angular/common';
 import { QuiztableComponent } from './teacher/quiztable/quiztable.component';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { ChallengeService } from './services/challenge.service';
 import { ChallengetableComponent } from './teacher/challengetable/challengetable.component';
 import { DisplayQuizComponent } from './pages/quiz/display-quiz/display-quiz.component';
@@ -41,6 +41,9 @@ import { StudentchallengeReportSummaryComponent } from './student/student-report
 import { BuytokenComponent } from './buytoken/buytoken.component';
 import { CashoutComponent } from './cashout/cashout.component';
 import { ParticipateComponent } from './participate/participate.component';
+
+import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+
 
 @NgModule({
   declarations: [
@@ -85,10 +88,12 @@ import { ParticipateComponent } from './participate/participate.component';
     DlDateTimeDateModule,  // <--- Determines the data type of the model
     DlDateTimePickerModule,
     ChartsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserModule,
+    FontAwesomeModule,
 
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
@@ -96,4 +101,8 @@ import { ParticipateComponent } from './participate/participate.component';
   }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(faFacebook, faTwitter, faInstagram);
+  }
+}

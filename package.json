@@ -7,9 +7,6 @@
     "test": "test"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^4.7.0",
-    "@truffle/hdwallet-provider": "^2.0.10",
-    "web3": "^1.7.4",
     "@angular/animations": "~11.0.5",
     "@angular/common": "~11.0.5",
     "@angular/compiler": "~11.0.5",
@@ -23,8 +20,10 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
     "@fortawesome/free-regular-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@openzeppelin/contracts": "^4.7.0",
+    "@truffle/hdwallet-provider": "^2.0.10",
     "angular-bootstrap-datetimepicker": "^4.0.2",
-    "bootstrap": "^4.5.3",
+    "bootstrap": "^4.6.2",
     "bootstrap-datetime-picker": "^2.4.4",
     "chart.js": "^2.9.4",
     "chart.piecelabel.js": "^0.15.0",
@@ -37,6 +36,7 @@
     "open-iconic": "^1.1.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "web3": "^1.7.4",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

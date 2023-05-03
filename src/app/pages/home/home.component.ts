@@ -15,5 +15,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this._bgColorService.updateBodyClass('qz-bg-white')
   }
+  winnerimg = '../sticker.jpg';
+
 
 }

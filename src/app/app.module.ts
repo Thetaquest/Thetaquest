@@ -43,6 +43,14 @@ import { CashoutComponent } from './cashout/cashout.component';
 import { ParticipateComponent } from './participate/participate.component';
 
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { BlogComponent } from './participate/blog/blog.component';
+import { BlogDetailsComponent } from './participate/blog-details/blog-details.component';
+import { BlogIntComponent } from './participate/blog-int/blog-int.component';
+import { CreateBlogComponent } from './participate/create-blog/create-blog.component';
+import { CreatedBlogListComponent } from './participate/created-blog-list/created-blog-list.component';
+import { CreateIntComponent } from './participate/create-int/create-int.component';
+import { FooterComponent } from './footer/footer.component';
+import { QuizlistComponent } from './quizlist/quizlist.component';
 
 
 @NgModule({
@@ -76,6 +84,14 @@ import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg
     BuytokenComponent,
     CashoutComponent,
     ParticipateComponent,
+    BlogComponent,
+    BlogDetailsComponent,
+    BlogIntComponent,
+    CreateBlogComponent,
+    CreatedBlogListComponent,
+    CreateIntComponent,
+    FooterComponent,
+    QuizlistComponent,
   ],
   imports: [
     BrowserModule,

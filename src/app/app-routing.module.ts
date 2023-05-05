@@ -27,11 +27,24 @@ import { StudentchallengeReportSummaryComponent } from './student/student-report
 import { BuytokenComponent } from './buytoken/buytoken.component';
 import { CashoutComponent } from './cashout/cashout.component'; 
 import { ParticipateComponent } from './participate/participate.component'; 
+import { BlogComponent } from './participate/blog/blog.component'; 
+import { BlogDetailsComponent } from './participate/blog-details/blog-details.component'; 
+import { BlogIntComponent } from './participate/blog-int/blog-int.component'; 
+import { CreateBlogComponent } from './participate/create-blog/create-blog.component'; 
+import { CreateIntComponent } from './participate/create-int/create-int.component'; 
+import { CreatedBlogListComponent } from './participate/created-blog-list/created-blog-list.component'; 
+
 
 const routes: Routes = [
   { path: 'buytoken', component: BuytokenComponent },
   { path: 'cashout', component: CashoutComponent },
   { path: 'participate', component: ParticipateComponent },
+  { path: 'blog', component: BlogComponent },
+  { path: 'blogdetails', component: BlogDetailsComponent },
+  { path: 'blogint', component: BlogIntComponent },
+  { path: 'createblog', component: CreateBlogComponent },
+  { path: 'createint', component: CreateIntComponent },
+  { path: 'createdblogs', component: CreatedBlogListComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'quiz/create', component: CreateQuizComponent, canActivate: [AuthGuard] },

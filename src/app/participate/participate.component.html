@@ -2,19 +2,19 @@
     <div class="row qz-bg-blue">
         <div class="col"></div>
         <div class="col-10">
-            <nav class="navbar navbar-dark navbar-expand-lg">
-                <div class="navbar-brand"><h2 class="text-white" routerLink='/' style="cursor: pointer;">ThetaQuest</h2></div>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top custom-navbar">
+                <div class="navbar-brand"><h2 class="text-white" routerLink='/studentdashboard/studentchallengetable' style="cursor: pointer;">ThetaQuest</h2></div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="nav-center">
-                    <button style="color: rgb(23, 209, 16);" routerLink="/buytoken">Buytoken</button>
-                    <button style="border-color: 5px solid black;">300.01QEC</button>
-                    <button style="color: rgb(23, 209, 16);" routerLink="/cashout">Cashout</button>
+                    <!-- <button style="color: rgb(23, 209, 16);" routerLink="/buytoken">Buytoken</button> -->
+                    <button style="border-color: 5px solid black;">3002000.01QEC</button>
+                    <!-- <button style="color: rgb(23, 209, 16);" routerLink="/cashout">Cashout</button> -->
                   </div>
                 <div class="collapse navbar-collapse float-right" id="navbarNavDropdown">
                     <ul class="navbar-nav ml-auto topnav text-white">
-                        <!-- <li style="background-color: rgb(25, 226, 25); border-radius: 10px;" class="nav-item px-2"><a class="nav-link" routerLink="/challenge/join-challenge">Play</a></li> -->
+                        <li style="background-color: rgb(25, 226, 25); border-radius: 10px;" class="nav-item px-2"><a class="nav-link" routerLink="/challenge/join-challenge">Play</a></li>
                         <li class="nav-item px-2"><a class="nav-link" routerLink="/participate">Participate</a></li>
                         <li class="nav-item px-2"><a class="nav-link" routerLink="/studentdashboard/studentchallengetable">Challenges</a></li>
                         <li class="nav-item px-2"><button (click)="logout()" class="btn qz-btn qz-bg-white">Logout</button></li>
@@ -25,14 +25,116 @@
         </div>
         <div class="col"></div>
     </div>
-    <div class="row">
+    <div class="row" id="studentpage">
         <!-- Dashboard body part -->
         <div class="col"></div>
         <div class="col-sm-9">
-            <p>participate works!</p>
-            <h1>This is the page student will find the list of quizzes, challenge and communities. So that they can connect with hosting teachers or communities in order to get pin and participate</h1>
-
+            <router-outlet></router-outlet>
         </div>
         <div class="col"></div>
     </div>
 </div>
+
+
+
+
+<!--Card for list of Quiz-->
+<section class="dark">
+    <div class="container py-4">
+      <h1 class="h1 text-center" id="pageHeaderTitle">QUIZ & CHALLENGES</h1>
+  
+      <article class="postcard dark green">
+        <a class="postcard__img_link" href="#">
+          <img class="postcard__img" src="https://picsum.photos/500/501" alt="Image Title" />
+        </a>
+        <div class="postcard__text">
+          <h1 class="postcard__title green"><a href="#">Amazon Quiz</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2020-05-25 12:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat
+            asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium
+            maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto
+            quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+          <ul class="postcard__tagbox">
+            <li class="tag__item"><i class="fas fa-play mr-2"></i>4000</li>
+            <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
+            <li class="tag__item play green">
+              <a href="#"><i class="fas fa-tag mr-2"></i>PARTICIPATE</a>
+            </li>
+          </ul>
+        </div>
+      </article>
+      <article class="postcard dark green">
+        <a class="postcard__img_link" href="#">
+          <img class="postcard__img" src="https://picsum.photos/500/501" alt="Image Title" />
+        </a>
+        <div class="postcard__text">
+          <h1 class="postcard__title green"><a href="#">META quiz</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2020-05-25 12:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat
+            asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium
+            maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto
+            quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+          <ul class="postcard__tagbox">
+            <li class="tag__item"><i class="fas fa-play mr-2"></i>20000</li>
+            <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
+            <li class="tag__item play green">
+              <a href="#"><i class="fas fa-tag mr-2"></i>PARTICIPATE</a>
+            </li>
+          </ul>
+        </div>
+      </article>
+      <article class="postcard dark green">
+        <a class="postcard__img_link" href="#">
+          <img class="postcard__img" src="https://picsum.photos/500/501" alt="Image Title" />
+        </a>
+        <div class="postcard__text">
+          <h1 class="postcard__title green"><a href="#">IBM quiz competion</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2020-05-25 12:00:00">
+              <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat
+            asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium
+            maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto
+            quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+          <ul class="postcard__tagbox">
+            <li class="tag__item"><i class="fas fa-play mr-2"></i>600000</li>
+            <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
+            <li class="tag__item play green">
+              <a href="#"><i class="fas fa-tag mr-2"></i>PARTICIPATE</a>
+            </li>
+          </ul>
+        </div>
+      </article>
+  
+      <!-- Quiz list Pagnation -->
+      <div class="quizpagination-container wow zoomIn mar-b-1x" data-wow-duration="0.5s">
+  
+        <ul class="quizpagination">
+          <li class="quizpagination-item--wide first"> <a class="quizpagination-link--wide first" href="#">Previous</a> </li>
+          <li class="quizpagination-item first-number"> <a class="quizpagination-link" href="#">1</a> </li>
+          <li class="quizpagination-item"> <a class="quizpagination-link" href="#">2</a> </li>
+          <li class="quizpagination-item is-active"> <a class="quizpagination-link" href="#">3</a> </li>
+          <li class="quizpagination-item"> <a class="quizpagination-link" href="#">4</a> </li>
+          <li class="quizpagination-item"> <a class="quizpagination-link" href="#">5</a> </li>
+          <li class="quizpagination-item--wide last"> <a class="quizpagination-link--wide last" href="#">Next</a> </li>
+        </ul>
+  
+      </div>
+      <!--End of quiz list pagnation-->
+    </div>
+  </section>
+  
+  

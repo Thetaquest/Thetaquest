@@ -709,7 +709,7 @@ section {
   background-image: url("../about-quiz.png");
   background-size: cover;
   background-position: center;
-  padding: 50px;
+  padding: 10px;
 }
 .just .container {
   display: flex;
@@ -831,7 +831,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 		background-image: url("../quiz-list.png");
   background-size: cover;
   background-position: center;
-  padding: 50px;
+  padding: 10px;
 	}
 	
 	.t-dark {
@@ -1144,26 +1144,3 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 	}
 }
 
-
-/* Footer code */
-.footer {
-  background-color: #004a54;
-  color: #fff;
-  padding: 40px 0;
-}
-
-.footer h4 {
-  margin-bottom: 20px;
-}
-
-.footer ul li {
-  margin-bottom: 10px;
-}
-
-.footer a {
-  color: #fff;
-}
-
-.footer a:hover {
-  color: #ccc;
-}

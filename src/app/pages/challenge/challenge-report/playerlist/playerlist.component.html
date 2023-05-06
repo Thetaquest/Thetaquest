@@ -1,42 +1,46 @@
-<div class="row m-5">
-  <!-- Datatable for list of quizzes -->
-  <div class="col">
-    <div class="qz-card table-box qz-rounded-corner-light">
-    <table cellpadding="10 ">
-      <thead class="qz-bg-blue text-white">
-      <tr>
-        <th>Name</th>
-        <th>Correct Answers</th>
-        <th>Wrong Answers</th>
-        <th>Final Score</th>
-        <th>Rank</th>
-        <th>Correct/Wrong answer statistics</th>
-      </tr>
-    </thead>
-  
-      <!-- <tr>
+<div class="playlist">
+  <div class="row m-5">
+    <!-- Datatable for list of quizzes -->
+    <div class="col">
+      <div class="qz-card table-box qz-rounded-corner-light">
+        <table cellpadding="10 ">
+          <thead class="qz-bg-blue text-white">
+            <tr>
+              <th>Name</th>
+              <th>Correct Answers</th>
+              <th>Wrong Answers</th>
+              <th>Final Score</th>
+              <th>Rank</th>
+              <th>Correct/Wrong answer statistics</th>
+              <th>Award</th>
+            </tr>
+          </thead>
+
+          <!-- <tr>
         <td></td><td></td><td></td><td></td><td></td>
         <td><div class="labelWrongAns"></div>Wrong answers</td>
       </tr> -->
-      <tr *ngFor="let item of info; let i=index">
-        <td >{{item.data.player_name}}</td>
-          <td >{{item.data.correct_answers}}</td>
-          <td>{{item.data.wrong_answers}}</td>    
-          <td>{{item.data.score}}</td>
-          <td>{{i+1}}</td>
-          <td class="d-flex justify-content-center">
-            <div style="display: block; height:75px; width:75px;">
-              <canvas baseChart width="1" height="1"
-                          [data]="[doughnutChartData[i*2],doughnutChartData[(i*2)+1]]"
-                          [chartType]="doughnutChartType"
-                          [colors]="doughnutColors"></canvas>
-            </div>   
-          </td>
-          
-      </tr>
-    </table>
+          <tr *ngFor="let item of info; let i=index">
+            <td>{{item.data.player_name}}</td>
+            <td>{{item.data.correct_answers}}</td>
+            <td>{{item.data.wrong_answers}}</td>
+            <td>{{item.data.score}}</td>
+            <td>{{i+1}}</td>
+            <td class="d-flex justify-content-center">
+              <div style="display: block; height:75px; width:75px;">
+                <canvas baseChart width="1" height="1" [data]="[doughnutChartData[i*2],doughnutChartData[(i*2)+1]]"
+                  [chartType]="doughnutChartType" [colors]="doughnutColors"></canvas>
+              </div>
+            </td>
+            <td>300Qec</td>
+
+
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
-</div>
+
 
 <!-- <body>
   <script src="node_modules/chart.js/src/chart.js"></script>

@@ -7,6 +7,8 @@ p {
     background-position: center;
     padding: 50px;
   }
+
+  
   .nav-center {
     text-align: center;
     flex: 1;
@@ -601,9 +603,10 @@ p {
   
       .tag__item {
         display: inline-block;
+        font-size: 30px;
         background: rgba(83, 83, 83, 0.4);
         border-radius: 3px;
-        padding: 2.5px 10px;
+        padding: 5px 15px;
         margin: 0 5px 5px 0;
         cursor: default;
         user-select: none;

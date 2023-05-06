@@ -60,8 +60,8 @@ const routes: Routes = [
   {
     path: 'studentdashboard', component: StudentdashboardComponent,
     children: [
-      { path: 'studentchallengetable', component: StudentchallangetableComponent }
-      // { path: 'studentprofile', component: StudentdashboardComponent }
+      { path: 'studentchallengetable', component: StudentchallangetableComponent },
+      // { path: 'studentprofile', component: StudentdashboardComponent },
     ],
     canActivate: [AuthGuard]
   },

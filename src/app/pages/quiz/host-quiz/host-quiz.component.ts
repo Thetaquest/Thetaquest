@@ -5,6 +5,24 @@ import { Challenge } from 'src/app/models/Challenge';
 import { BgColorService } from 'src/app/services/bg-color.service';
 import { ChallengeService } from 'src/app/services/challenge.service';
 
+
+// @Component({
+//   selector: 'app-table',
+//   templateUrl: './table.component.html',
+//   styleUrls: ['./table.component.css']
+// })
+// export class TableComponent {
+//   rows: any[] = [
+//     { value: null },
+//     { value: null },
+//     { value: null }
+//   ];
+
+//   addRow() {
+//     this.rows.push({ value: null });
+//   }
+// }
+
 @Component({
   selector: 'app-host-quiz',
   templateUrl: './host-quiz.component.html',
@@ -38,7 +56,18 @@ export class HostQuizComponent implements OnInit {
       )
     });
   }
-
+    rows: any[] = [
+      { value: null },
+      { value: null },
+      { value: null }
+    ];
+  
+    addRow() {
+      if (this.rows.length >= 3) {
+        this.rows.push({ value: null });
+      }
+    }
+  
   ngOnInit(): void {
     this._bgColorService.updateBodyClass("qz-bg-blue");
     this.quizId=this._Activatedroute.snapshot.paramMap.get("quiz_id");

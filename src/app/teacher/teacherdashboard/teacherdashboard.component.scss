@@ -1,17 +1,23 @@
+/* top cash coin */
+
+/*-------------*/
+
 #teacherhome {
   background-image: url("../student.png");
   background-size: cover;
   background-position: center;
   padding: 50px;
 }
+
 .nav-center {
   text-align: center;
   flex: 1;
+
 }
 
 .nav-center button {
   color: #333;
-  padding: 10px;
+  padding: 2px;
   border: none;
   border-radius: 5px;
 }

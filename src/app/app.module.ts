@@ -51,6 +51,7 @@ import { CreatedBlogListComponent } from './participate/created-blog-list/create
 import { CreateIntComponent } from './participate/create-int/create-int.component';
 import { FooterComponent } from './footer/footer.component';
 import { QuizlistComponent } from './quizlist/quizlist.component';
+import { WalletconnectComponent } from './walletconnect/walletconnect.component';
 
 
 @NgModule({
@@ -92,6 +93,7 @@ import { QuizlistComponent } from './quizlist/quizlist.component';
     CreateIntComponent,
     FooterComponent,
     QuizlistComponent,
+    WalletconnectComponent,
   ],
   imports: [
     BrowserModule,

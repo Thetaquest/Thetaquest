@@ -16,6 +16,7 @@
             <th>No. of Players</th>
             <th>View</th>
             <th>Winners</th>
+            <th>Quiz Details</th>
           </tr>
         </thead>
         <tbody>
@@ -35,6 +36,7 @@
             <td>{{item.data.numberOfPlayers}}</td>                                              <!-- <button type="button" (click)="ChallengeByID(item.data.challenge_id)"> -->
             <td><a [routerLink]="['/challenge',item.data.challenge_id,'reports','summary']"><button class="btn qz-btn qz-bg-blue text-white" type="button">View</button></a> </td>
             <td><a [routerLink]="['/challenge',item.data.challenge_id,'reports','playerlist']"><button class="btn qz-btn qz-bg-blue text-white" type="button">Winners</button></a> </td>
+            <td><a [routerLink]="['/challenge',item.data.challenge_id,'reports','createblog']"><button class="btn qz-btn qz-bg-blue text-white" type="button">Details</button></a> </td>
 
           </tr>
         </tbody>

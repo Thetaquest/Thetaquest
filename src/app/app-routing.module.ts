@@ -73,6 +73,7 @@ const routes: Routes = [
     children: [
       { path: 'summary', component: ChallengeReportSummaryComponent },
       { path: 'playerlist', component: PlayerlistComponent },
+      { path: 'createblog', component: CreateBlogComponent },
 
     ],
     canActivate: [AuthGuard]

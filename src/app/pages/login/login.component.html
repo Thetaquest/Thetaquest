@@ -4,7 +4,9 @@
       <div class="col-10">
         <nav class="navbar navbar-expand-md navbar-dark fixed-top custom-navbar">
           <div class="navbar-brand">
-            <h2 class="text-white">ThetaQuest</h2>
+            <h2 class="text-white" routerLink="/"
+            style="cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 30px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #1e293b; text-shadow: 2px 2px 0 #fa8110;">
+            ThetaQuest</h2>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +36,7 @@
             <div class="row">
                 <div class="col"></div>
                 <div class="col-12 col-sm-9 col-md-7 col-lg-5 col-xl-4">
-                    <h1 class="display-4 font-weight-bold text-center mt-5" routerLink="/" style="cursor: pointer; color: #004a54;">ThetaQuest</h1>
+                    <!-- <h1 class="display-4 font-weight-bold text-center mt-5" routerLink="/" style="cursor: pointer; color: #004a54;">ThetaQuest</h1> -->
                     <div *ngIf="error_message" class="alert alert-danger alert-dismissible fade show mx-4 qz-border qz-rounded-corner qz-card-shadow" role="alert">
                         <h4 class="alert-heading">Error!</h4>
                         <p>{{error_message}}</p>

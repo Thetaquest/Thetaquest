@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
-export class FooterComponent implements OnInit {
+export class HeaderComponent implements OnInit {
 
   isTeacher: boolean;
 
@@ -18,4 +18,5 @@ export class FooterComponent implements OnInit {
       this.isTeacher = userData.role === 'teacher';
     }
   }
+
 }

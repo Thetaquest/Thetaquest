@@ -8,21 +8,30 @@ p {
     padding: 50px;
   }
 
-  
+
+  .navbar {
+    padding: 0;
+    padding-left: 3%;
+    padding-right: 3%;
+    // background-color: #f0f0f0;
+  }
   .nav-center {
     text-align: center;
     flex: 1;
+  
   }
   
   .nav-center button {
     color: #333;
-    padding: 10px;
+    padding: 2px;
     border: none;
     border-radius: 5px;
   }
   
   nav{
     width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
   }
   nav ul li a{
     color: #fff;
@@ -32,10 +41,13 @@ p {
     letter-spacing: 1px;
     transition: all 0.1s ease;
   }
+  nav ul li a.active:focus {
+    color: #ffb727;
+  }
   nav ul li a.active,
   nav ul li a:hover{
-    color: #111;
-    background: #f2f2f2;
+    color: #ffb727;
+    
   }
   
   .illustrations{
@@ -66,7 +78,6 @@ p {
   h1, h2, h3, h4, h5, h6 {
     font-family: "Raleway", sans-serif;
   }
-  
   /*-----------------------------------------*/
   /* Quiz Pagnation */
   /*-------------------------------------------*/

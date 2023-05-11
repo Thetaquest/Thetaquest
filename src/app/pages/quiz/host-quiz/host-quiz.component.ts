@@ -38,6 +38,7 @@ export class HostQuizComponent implements OnInit {
   isError = false;
   isSuccess = false;
   errorMessage = '';
+  private _authService: any;
   constructor(private _Activatedroute:ActivatedRoute, private formBuilder: FormBuilder,
     private challengeservice:ChallengeService, private _bgColorService: BgColorService, private _router: Router) { 
     this.showEndDateTimePicker = false;
@@ -121,6 +122,11 @@ export class HostQuizComponent implements OnInit {
           }
       }
     );
+  }
+  logout() {
+    console.log("in logout")
+    this._authService.logOut();
+    this._router.navigate(['/'])
   }
 
   dismissErrorAlert(){

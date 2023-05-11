@@ -52,6 +52,7 @@ import { CreateIntComponent } from './participate/create-int/create-int.componen
 import { FooterComponent } from './footer/footer.component';
 import { QuizlistComponent } from './quizlist/quizlist.component';
 import { WalletconnectComponent } from './walletconnect/walletconnect.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -94,6 +95,7 @@ import { WalletconnectComponent } from './walletconnect/walletconnect.component'
     FooterComponent,
     QuizlistComponent,
     WalletconnectComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

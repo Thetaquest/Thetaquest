@@ -1,59 +1,17 @@
-<div class="container-fluid">
-  <!-- NavBar for Teacher's Dashboard -->
-  <div class="row qz-bg-blue">
-    <div class="col"></div>
-    <div class="col-10">
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top custom-navbar"
-        style="padding-left: 20px; padding-right: 20px;">
-        <div class="navbar-brand">
-          <h2 class="text-white" routerLink="/teacherdashboard/quiztable"
-            style="cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 30px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #1e293b; text-shadow: 2px 2px 0 #fa8110;">
-            ThetaQuest</h2>
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon text-white"></span>
-        </button>
-        <div class="nav-center">
-
-          <!-- Change .nav-center button padding to 2px instead of 50 -->
-          <div class=""><button data-testid="" class=""><img style="width: 25px; height: 25px; border-radius: 50%;"
-                src="../../../assets/img/logo-coin.jpg" alt="CREDITS" class=""><span
-                style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; color: #312c25; text-shadow: 1px 1px 0 #333; border-radius: 5px;">4000</span></button>
-          </div>
 
 
-        </div>
-        <div class="collapse navbar-collapse navbar-default float-right" id="navbarNavDropdown">
-          <ul class="navbar-nav ml-auto topnav text-white">
-            <!-- <li class="nav-item px-2"><a class="nav-link" routerLink="/challenge/join-challenge">Play</a></li> -->
-            <li class="nav-item px-2"><a class="nav-link" routerLink="quiztable">Quizzes</a></li>
-            <li class="nav-item px-2"><a class="nav-link" routerLink="challengetable">Challenges</a></li>
-            <li class="nav-item px-2"><a class="nav-link" routerLink="/quiz/create">Create Quiz</a></li>
-            <li class="nav-item px-2"><button class="btn qz-btn qz-bg-white" (click)="logout()">Logout</button></li>
-            <!-- <li><a routerLink="teacherprofile">Profile</a></li> -->
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <div class="col"></div>
+<div class="row" id="teacherhome">
+  <!-- Dashboard body part -->
+  <div class="col"></div>
+  <div class="col-sm-9">
+    <router-outlet></router-outlet>
   </div>
-  <div class="row" id="teacherhome">
-    <!-- Dashboard body part -->
-    <div class="col"></div>
-    <div class="col-sm-9">
-      <router-outlet></router-outlet>
-    </div>
-    <div class="col"></div>
-  </div>
+  <div class="col"></div>
 </div>
 
 
-
-
-
 <!--Card for list of Quiz-->
-<section class="dark">
+<section class="dark container-fluid">
   <div class="container py-4">
     <h1 class="h1 text-center" id="pageHeaderTitle">QUIZ & CHALLENGES</h1>
 
@@ -76,9 +34,7 @@
         <ul class="postcard__tagbox">
           <li class="tag__item"><i class="fas fa-tag mr-2"></i>4000</li>
           <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
-          <li class="tag__item play green">
-            <a href="#"><i class="fas fa-play mr-2"></i>PLAY</a>
-          </li>
+
         </ul>
       </div>
     </article>
@@ -101,9 +57,7 @@
         <ul class="postcard__tagbox">
           <li class="tag__item"><i class="fas fa-tag mr-2"></i>20000</li>
           <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
-          <li class="tag__item play green">
-            <a href="#"><i class="fas fa-play mr-2"></i>PLAY</a>
-          </li>
+
         </ul>
       </div>
     </article>
@@ -126,9 +80,7 @@
         <ul class="postcard__tagbox">
           <li class="tag__item"><i class="fas fa-tag mr-2"></i>600000</li>
           <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
-          <li class="tag__item play green">
-            <a href="#"><i class="fas fa-play mr-2"></i>PLAY</a>
-          </li>
+
         </ul>
       </div>
     </article>
@@ -173,8 +125,8 @@
           <div class="card-body">
             <h5 class="card-title">
               <button data-testid="" class=""><img style="width: 25px; height: 25px; border-radius: 50%;"
-                src="../../../assets/img/logo-coin.jpg" alt="CREDITS" class=""><span
-                style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; color: #312c25; text-shadow: 1px 1px 0 #333; border-radius: 5px;">4000</span></button>
+                  src="../../../assets/img/logo-coin.jpg" alt="CREDITS" class=""><span
+                  style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; color: #312c25; text-shadow: 1px 1px 0 #333; border-radius: 5px;">4000</span></button>
             </h5>
             <p class="card-text"><b>WINNER:</b> <br> Amazon quiz at closing up learning gaps
               regardless of locations and
@@ -192,9 +144,11 @@
           <img src="../../../assets/img/img1.jpeg" class="card-img-top" alt="...">
 
           <div class="card-body">
-            <h5 class="card-title"><button data-testid="" class=""><img style="width: 25px; height: 25px; border-radius: 50%;"
-              src="../../../assets/img/logo-coin.jpg" alt="CREDITS" class=""><span
-              style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; color: #312c25; text-shadow: 1px 1px 0 #333; border-radius: 5px;">4000</span></button></h5>
+            <h5 class="card-title"><button data-testid="" class=""><img
+                  style="width: 25px; height: 25px; border-radius: 50%;" src="../../../assets/img/logo-coin.jpg"
+                  alt="CREDITS" class=""><span
+                  style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; color: #312c25; text-shadow: 1px 1px 0 #333; border-radius: 5px;">4000</span></button>
+            </h5>
             <p class="card-text"><b>WINNER:</b> <br> Amazon quiz at closing up learning gaps
               regardless of locations and
               solve educational problems using technology and trained professionals. </p>
@@ -210,9 +164,11 @@
           <img src="../../../assets/img/img1.jpeg" class="card-img-top" alt="...">
 
           <div class="card-body">
-            <h5 class="card-title"><button data-testid="" class=""><img style="width: 25px; height: 25px; border-radius: 50%;"
-              src="../../../assets/img/logo-coin.jpg" alt="CREDITS" class=""><span
-              style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; color: #312c25; text-shadow: 1px 1px 0 #333; border-radius: 5px;">4000</span></button></h5>
+            <h5 class="card-title"><button data-testid="" class=""><img
+                  style="width: 25px; height: 25px; border-radius: 50%;" src="../../../assets/img/logo-coin.jpg"
+                  alt="CREDITS" class=""><span
+                  style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; color: #312c25; text-shadow: 1px 1px 0 #333; border-radius: 5px;">4000</span></button>
+            </h5>
             <p class="card-text"><b>WINNER:</b> <br> Amazon quiz at closing up learning gaps
               regardless of locations and
               solve educational problems using technology and trained professionals. </p>

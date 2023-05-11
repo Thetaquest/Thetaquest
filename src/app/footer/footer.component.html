@@ -1,33 +1,82 @@
-<footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <h4>About Us</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.</p>
-          <ul class="list-unstyled">
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
+<!-- <footer>
+  <div *ngIf="isTeacher; else studentContent">
+    <h1>Teachers</h1>
+  </div>
+  <ng-template #studentContent>
+    <h1>students</h1>
+  </ng-template>
+</footer> -->
+  
+    <div *ngIf="isTeacher; else studentContent">
+      <!--Teacher Header -->
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <h4>About Us</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.</p>
+              <ul class="list-unstyled">
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h4>Connect With Us</h4>
+              <ul class="list-unstyled">
+                <li><a href="#"><i class="fab fa-facebook fa-lg"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter fa-lg"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram fa-lg"></i></a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h4>Footer Menu</h4>
+              <ul class="list-unstyled">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="col-md-4">
-          <h4>Connect With Us</h4>
-          <ul class="list-unstyled">
-            <li><a href="#"><i class="fab fa-facebook fa-lg"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter fa-lg"></i></a></li>
-            <li><a href="#"><i class="fab fa-instagram fa-lg"></i></a></li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <h4>Footer Menu</h4>
-          <ul class="list-unstyled">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-      </div>
+      </footer>
     </div>
-  </footer>
+    <ng-template #studentContent>
+      <!--Student Header-->
+      <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <h4>About Us</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.</p>
+              <ul class="list-unstyled">
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h4>Connect With Us</h4>
+              <ul class="list-unstyled">
+                <li><a href="#"><i class="fab fa-facebook fa-lg"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter fa-lg"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram fa-lg"></i></a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h4>Footer Menu</h4>
+              <ul class="list-unstyled">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </ng-template>
+  

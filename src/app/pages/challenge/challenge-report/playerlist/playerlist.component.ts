@@ -20,6 +20,8 @@ export class PlayerlistComponent implements OnInit {
   index: any;
   
   public challengeId: string;
+  private _authService: any;
+  isTeacher: boolean;
   constructor(private reportsservice:ReportsService,private _Activatedroute:ActivatedRoute) { }
 
 
@@ -64,7 +66,14 @@ export class PlayerlistComponent implements OnInit {
       )
       
     
-     
+      // try {
+      //   if(this._authService.isLoggedIn()){
+      //     let userData = this._authService.getUserData();
+      //     this.isTeacher = userData['role'] == "teacher";
+      //   }
+      // } catch (error) {
+      //   console.log(error);
+      // }
 
   }
   }

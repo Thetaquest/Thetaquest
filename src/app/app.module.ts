@@ -49,10 +49,8 @@ import { BlogIntComponent } from './participate/blog-int/blog-int.component';
 import { CreateBlogComponent } from './participate/create-blog/create-blog.component';
 import { CreatedBlogListComponent } from './participate/created-blog-list/created-blog-list.component';
 import { CreateIntComponent } from './participate/create-int/create-int.component';
-import { FooterComponent } from './footer/footer.component';
 import { QuizlistComponent } from './quizlist/quizlist.component';
 import { WalletconnectComponent } from './walletconnect/walletconnect.component';
-import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -92,10 +90,8 @@ import { HeaderComponent } from './header/header.component';
     CreateBlogComponent,
     CreatedBlogListComponent,
     CreateIntComponent,
-    FooterComponent,
     QuizlistComponent,
     WalletconnectComponent,
-    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -105,7 +101,7 @@ import { HeaderComponent } from './header/header.component';
     HttpClientModule,
     AppRoutingModule,
     FontAwesomeModule,
-    DlDateTimeDateModule,  // <--- Determines the data type of the model
+    DlDateTimeDateModule,  // -- Determines the data type of the model
     DlDateTimePickerModule,
     ChartsModule,
     NgxPaginationModule,

@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
           this._router.navigate(['/teacherdashboard/quiztable']);
         else
           this._router.navigate(['/studentdashboard/studentchallengetable']);
-
+        location.reload();
       },
         (err) => {
           console.log("LOGIN : Failed");

@@ -1,38 +1,10 @@
-<header class="header">
-  <div class="row qz-bg-blue">
-    <div class="col"></div>
-    <div class="col-10">
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top custom-navbar">
-        <div class="navbar-brand">
-          <h2 class="text-white">ThetaQuest</h2>
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon text-white"></span>
-        </button>
-        <div class="collapse navbar-collapse navbar-default float-right" id="navbarNavDropdown">
-          <ul class="navbar-nav ml-auto topnav text-white">
-
-            <li class="nav-item px-2"><button class="btn qz-btn qz-bg-blue text-white" routerLink="/login">Log
-                in</button></li>
-            <li class="nav-item px-2"><button class="btn qz-btn qz-bg-white" routerLink="/register">Sign up</button>
-            </li>
-            <!-- <li><a routerLink="teacherprofile">Profile</a></li> -->
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <div class="col"></div>
-  </div>
-</header>
-
 <!-- ======= Winners Boxes Section ======= -->
 <section id="hero-section" class="hero-section">
   <div class="container">
 
     <!--Top button-->
     <div class="wrapper">
-      <a class="cta" href="#">
+      <a class="cta" routerLink="/login">
         <span>JOIN QUIZ</span>
         <span>
           <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +83,7 @@
         <img class="postcard__img" src="https://picsum.photos/500/501" alt="Image Title" />
       </a>
       <div class="postcard__text">
-        <h1 class="postcard__title green"><a routerLink="/participate">Amazon Quiz</a></h1>
+        <h1 class="postcard__title green"><a routerLink="/login">Amazon Quiz</a></h1>
         <div class="postcard__subtitle small">
           <time datetime="2020-05-25 12:00:00">
             <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
@@ -126,7 +98,7 @@
           <li class="tag__item"><i class="fas fa-tag mr-2"></i>4000</li>
           <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
           <li class="tag__item play green">
-            <a href="#"><i class="fas fa-play mr-2"></i>PLAY</a>
+            <a href="#"><i class="fas fa-play mr-2"></i>PERTICIPATE</a>
           </li>
         </ul>
       </div>
@@ -136,7 +108,7 @@
         <img class="postcard__img" src="https://picsum.photos/500/501" alt="Image Title" />
       </a>
       <div class="postcard__text">
-        <h1 class="postcard__title green"><a href="#">META quiz</a></h1>
+        <h1 class="postcard__title green"><a routerLink="/login">META quiz</a></h1>
         <div class="postcard__subtitle small">
           <time datetime="2020-05-25 12:00:00">
             <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
@@ -151,13 +123,13 @@
           <li class="tag__item"><i class="fas fa-tag mr-2"></i>20000</li>
           <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
           <li class="tag__item play green">
-            <a href="#"><i class="fas fa-play mr-2"></i>PLAY</a>
+            <a href="#"><i class="fas fa-play mr-2"></i>PERTICIPATE</a>
           </li>
         </ul>
       </div>
     </article>
     <article class="postcard dark green">
-      <a class="postcard__img_link" href="#">
+      <a class="postcard__img_link" routerLink="/login">
         <img class="postcard__img" src="https://picsum.photos/500/501" alt="Image Title" />
       </a>
       <div class="postcard__text">
@@ -176,7 +148,7 @@
           <li class="tag__item"><i class="fas fa-tag mr-2"></i>600000</li>
           <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
           <li class="tag__item play green">
-            <a href="#"><i class="fas fa-play mr-2"></i>PLAY</a>
+            <a href="#"><i class="fas fa-play mr-2"></i>PERTICIPATE</a>
           </li>
         </ul>
       </div>
@@ -219,7 +191,9 @@
           <img src="../../../assets/img/img1.jpeg" class="card-img-top" alt="...">
 
           <div class="card-body">
-            <h5 class="card-title"><button>8000 QET</button></h5>
+            <h5 class="card-title"><button data-testid="" class=""><img style="width: 25px; height: 25px; border-radius: 50%;"
+              src="../../../assets/img/logo-coin.jpg" alt="CREDITS" class=""><span
+              style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; color: #312c25; text-shadow: 1px 1px 0 #333; border-radius: 5px;">4000</span></button></h5>
             <p class="card-text"><b>WINNER:</b> <br> Amazon quiz at closing up learning gaps
               regardless of locations and
               solve educational problems using technology and trained professionals. </p>
@@ -236,7 +210,9 @@
           <img src="../../../assets/img/img1.jpeg" class="card-img-top" alt="...">
 
           <div class="card-body">
-            <h5 class="card-title"><button>5000 QET</button></h5>
+            <h5 class="card-title"><button data-testid="" class=""><img style="width: 25px; height: 25px; border-radius: 50%;"
+              src="../../../assets/img/logo-coin.jpg" alt="CREDITS" class=""><span
+              style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; color: #312c25; text-shadow: 1px 1px 0 #333; border-radius: 5px;">4000</span></button></h5>
             <p class="card-text"><b>WINNER:</b> <br> Amazon quiz at closing up learning gaps
               regardless of locations and
               solve educational problems using technology and trained professionals. </p>
@@ -252,7 +228,9 @@
           <img src="../../../assets/img/img1.jpeg" class="card-img-top" alt="...">
 
           <div class="card-body">
-            <h5 class="card-title"><button>300 QET</button></h5>
+            <h5 class="card-title"><button data-testid="" class=""><img style="width: 25px; height: 25px; border-radius: 50%;"
+              src="../../../assets/img/logo-coin.jpg" alt="CREDITS" class=""><span
+              style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; color: #312c25; text-shadow: 1px 1px 0 #333; border-radius: 5px;">4000</span></button></h5>
             <p class="card-text"><b>WINNER:</b> <br> Amazon quiz at closing up learning gaps
               regardless of locations and
               solve educational problems using technology and trained professionals. </p>

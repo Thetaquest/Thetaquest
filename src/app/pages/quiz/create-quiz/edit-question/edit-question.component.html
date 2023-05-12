@@ -17,25 +17,30 @@
     <div class="col"></div>
     <div class="col-4 text-right">
       <div class="dropdown-div mt-3">
-        <label for="timer">Select time (seconds):</label>
+        <label for="timer">Select time:</label>
         <select [(ngModel)]="_activeQuestion.timeLimit" class="mx-2 qz-border" style="width: 40%; height: auto; border-radius: 5px;" name="timer">
-          <option value="10">10</option>
-          <option value="20">20</option>
-          <option value="30">30</option>
-          <option value="60">60</option>
-          <option value="90">90</option>
-          <option value="120">120</option>
-          <option value="180">180</option>
-          <option value="240">240</option>
+          <option value="20">20 sec</option>
+          <option value="60">60 sec</option>
+          <option value="300">5 min</option>
+          <option value="900">15 min</option>
+          <option value="1800">30 min</option>
+          <option value="2400">40 min</option>
+          <option value="3600">1 hour</option>
+          <option value="7200">2 hour</option>
         </select>
       </div>
       <div class="dropdown-div mt-3">
         <label for="points">Select points:</label>
         <select [(ngModel)]="_activeQuestion.maxCreditPoint" class="mx-2 qz-border" style="width: 40%; height: auto; border-radius: 5px;" name="points">
+          <option value="0.0005">0.0005</option>
+          <option value="0.005">0.005</option>
+          <option value="0.05">0.05</option>
+          <option value="0.5">0.5</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
           <option value="100">100</option>
-          <option value="200">200</option>
-          <option value="300">300</option>
-          <option value="400">400</option>
         </select>
       </div>
     </div>

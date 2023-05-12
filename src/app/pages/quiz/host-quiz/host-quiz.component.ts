@@ -5,6 +5,24 @@ import { Challenge } from 'src/app/models/Challenge';
 import { BgColorService } from 'src/app/services/bg-color.service';
 import { ChallengeService } from 'src/app/services/challenge.service';
 
+
+// @Component({
+//   selector: 'app-table',
+//   templateUrl: './table.component.html',
+//   styleUrls: ['./table.component.css']
+// })
+// export class TableComponent {
+//   rows: any[] = [
+//     { value: null },
+//     { value: null },
+//     { value: null }
+//   ];
+
+//   addRow() {
+//     this.rows.push({ value: null });
+//   }
+// }
+
 @Component({
   selector: 'app-host-quiz',
   templateUrl: './host-quiz.component.html',
@@ -20,6 +38,7 @@ export class HostQuizComponent implements OnInit {
   isError = false;
   isSuccess = false;
   errorMessage = '';
+  private _authService: any;
   constructor(private _Activatedroute:ActivatedRoute, private formBuilder: FormBuilder,
     private challengeservice:ChallengeService, private _bgColorService: BgColorService, private _router: Router) { 
     this.showEndDateTimePicker = false;
@@ -38,7 +57,18 @@ export class HostQuizComponent implements OnInit {
       )
     });
   }
-
+    rows: any[] = [
+      { value: null },
+      { value: null },
+      { value: null }
+    ];
+  
+    addRow() {
+      if (this.rows.length >= 3) {
+        this.rows.push({ value: null });
+      }
+    }
+  
   ngOnInit(): void {
     this._bgColorService.updateBodyClass("qz-bg-blue");
     this.quizId=this._Activatedroute.snapshot.paramMap.get("quiz_id");
@@ -92,6 +122,11 @@ export class HostQuizComponent implements OnInit {
           }
       }
     );
+  }
+  logout() {
+    console.log("in logout")
+    this._authService.logOut();
+    this._router.navigate(['/'])
   }
 
   dismissErrorAlert(){

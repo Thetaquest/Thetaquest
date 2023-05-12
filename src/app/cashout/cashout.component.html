@@ -1,51 +1,21 @@
 <section>
     <div class="container-fluid">
-        <div class="row qz-bg-blue">
-            <div class="col"></div>
-            <div class="col-10">
-                <nav class="navbar navbar-dark navbar-expand-lg">
-                    <div class="navbar-brand">
-                        <h2 class="text-white" routerLink='/' style="cursor: pointer;">ThetaQuest</h2>
-                    </div>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="nav-center">
-                        <button style="color: rgb(23, 209, 16);" routerLink="/buytoken">Buytoken</button>
-                        <button style="border-color: 5px solid black;">300.01QEC</button>
-                        <button style="color: rgb(23, 209, 16);" routerLink="/cashout">Cashout</button>
-                    </div>
-                    <div class="collapse navbar-collapse float-right" id="navbarNavDropdown">
-                        <ul class="navbar-nav ml-auto topnav text-white">
-                            <li class="nav-item px-2"><a class="nav-link" routerLink="/challenge/join-challenge">Play</a>
-                            </li>
-                            <li class="nav-item px-2"><a class="nav-link" routerLink="studentchallengetable">Challenges</a>
-                            </li>
-                            <li class="nav-item px-2"><button (click)="logout()"
-                                    class="btn qz-btn qz-bg-white">Logout</button></li>
-                            <!-- <li><a routerLink="teacherprofile">Profile</a></li> -->
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-            <div class="col"></div>
-        </div>
+        
         <div class="row">
             <!-- Dashboard body part -->
             <div class="col"></div>
             <div class="col-sm-9">
-    
+
                 <div class="jumbotron jumbotron-flat">
                     <div class="center">
                         <h2><i>BALANCE</i> = <i>50Quest</i></h2>
                     </div>
                     <div class="paymentAmt">0.005QUEST = $100</div>
-    
-    
-    
+
+
+
                 </div>
-    
+
                 <div class="row">
                     <div class="col-lg-6 mx-auto">
                         <div class="card">
@@ -61,7 +31,7 @@
                                             <a data-toggle="pill" href="#paypal" class="nav-link"> <i
                                                     class="fas fa-coins mr-2"></i>Transfer Coin</a>
                                         </li>
-            
+
                                     </ul>
                                 </div>
                                 <!-- End -->
@@ -74,24 +44,26 @@
                                                 <label for="username">
                                                     <h6>Amount to Cashout</h6>
                                                 </label>
-                                                <input type="number" name="username" placeholder="Cashout Amount" required
-                                                    class="form-control" />
+                                                <input type="number" name="username" placeholder="Cashout Amount"
+                                                    required class="form-control" />
                                             </div>
                                             <div class="form-group">
                                                 <label for="QuestAddress">
                                                     <h6>Quest Address</h6>
                                                 </label>
                                                 <div class="input-group">
-                                                    <input type="" name="cardNumber" placeholder="Valid Quest coin Address"
-                                                        class="form-control" required />
+                                                    <input type="" name="cardNumber"
+                                                        placeholder="Valid Quest coin Address" class="form-control"
+                                                        required />
                                                     <div class="input-group-append">
                                                         <span class="input-group-text text-muted"> <i
                                                                 class="fab fa-cc-amex mx-1"></i> </span>
                                                     </div>
                                                 </div>
                                             </div>
-            
-                                            <div class="card-footer"><button type="button" class="subscribe btn btn-block shadow-sm"
+
+                                            <div class="card-footer"><button type="button"
+                                                    class="subscribe btn btn-block shadow-sm"
                                                     style="background-color: rgb(247, 31, 67);">Cash Out</button>
                                             </div>
                                         </form>
@@ -104,8 +76,8 @@
                                                 <label for="username">
                                                     <h6>Amount to Transfer</h6>
                                                 </label>
-                                                <input type="number" name="username" placeholder="Amount to Transfer" required
-                                                    class="form-control" />
+                                                <input type="number" name="username" placeholder="Amount to Transfer"
+                                                    required class="form-control" />
                                             </div>
                                             <div class="form-group">
                                                 <label for="QuestAddress">
@@ -113,20 +85,21 @@
                                                 </label>
                                                 <div class="input-group">
                                                     <input type="" name="cardNumber"
-                                                        placeholder="Valid Quest coin Address of the Reciever" class="form-control"
-                                                        required />
+                                                        placeholder="Valid Quest coin Address of the Reciever"
+                                                        class="form-control" required />
                                                     <div class="input-group-append">
                                                         <span class="input-group-text text-muted"> <i
                                                                 class="fab fa-cc-amex mx-1"></i> </span>
                                                     </div>
                                                 </div>
                                             </div>
-            
-                                            <div class="card-footer"><button type="button" class="subscribe btn btn-block shadow-sm"
+
+                                            <div class="card-footer"><button type="button"
+                                                    class="subscribe btn btn-block shadow-sm"
                                                     style="background-color: rgb(247, 31, 67);">Transfer Coin</button>
                                             </div>
                                         </form>
-            
+
                                         <!-- End -->
                                     </div>
                                 </div>

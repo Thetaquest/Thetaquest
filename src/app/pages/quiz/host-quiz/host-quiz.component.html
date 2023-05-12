@@ -1,9 +1,13 @@
-<div class="container-fluid">
+<div class="container-fluid" id="hostquiz">
+    
+    <br>
+    <br>
+
     <div class="row">
         <div class="col"></div>
         <div class="col-11 col-sm-11 col-md-9 col-lg-7 col-xl-6">
-            <h1 style="color: #004a54;" class="display-4 font-weight-bold text-center m-3" routerLink="/login" style="cursor: pointer;">ThetaQuest</h1>
-            
+            <!-- <h1 style="color: #004a54;" class="display-4 font-weight-bold text-center m-3" routerLink="/login" style="cursor: pointer;">ThetaQuest</h1> -->
+
             <!-- <div *ngIf="error_message" class="alert alert-danger alert-dismissible fade show mx-4 qz-border qz-rounded-corner qz-card-shadow" role="alert">
                 <h4 class="alert-heading">Error!</h4>
                 <p>{{error_message}}</p>
@@ -11,7 +15,7 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
             </div> -->
-            
+
             <div class="card qz-card qz-card-rounded qz-card-shadow mt-2 mx-4 p-5">
                 <h3>Host Quiz</h3>
                 <p>After hosting a quiz, It will be referred as challenge..</p>
@@ -20,40 +24,44 @@
                     <div class="form-group">
                         <label class="qz-form-label" for="inputTitle">Title:</label>
                         <input type="text" formControlName="title" [class.is-invalid]="title.invalid && title.touched"
-                        [class.is-valid]="title.valid && title.touched" class="form-control qz-text-input" id="inputTitle" placeholder="Enter title for challenge..">
+                            [class.is-valid]="title.valid && title.touched" class="form-control qz-text-input"
+                            id="inputTitle" placeholder="Enter title for challenge..">
                         <div *ngIf="title.invalid && title.touched">
-                            <small class="text-danger mx-2" *ngIf="title.errors?.required">Challenge title is required.</small>
+                            <small class="text-danger mx-2" *ngIf="title.errors?.required">Challenge title is
+                                required.</small>
                         </div>
                     </div>
                     <!-- Challenge Description -->
                     <div class="form-group">
                         <label class="qz-form-label" for="inputDesc">Desciption:</label>
-                        <textarea type="text" formControlName="description" [class.is-valid]="description.valid && description.touched" class="form-control qz-text-input" id="inputDesc" placeholder="Enter desciption for challenge.."></textarea>
+                        <textarea type="text" formControlName="description"
+                            [class.is-valid]="description.valid && description.touched"
+                            class="form-control qz-text-input" id="inputDesc"
+                            placeholder="Enter desciption for challenge.."></textarea>
                     </div>
                     <!-- StartDateTime -->
                     <div class="form-group">
                         <label class="qz-form-label" for="inputEndDateNTime">Start Date & Time:</label>
                         <div class="input-group mb-3">
-                            <input value="{{hostQuizForm.value.startDatetime}}" formControlName="startDatetime" [class.is-invalid]="startDatetime.invalid && startDatetime.touched"
-                            [class.is-valid]="startDatetime.valid && startDatetime.touched" type="text" class="form-control qz-text-input">
+                            <input value="{{hostQuizForm.value.startDatetime}}" formControlName="startDatetime"
+                                [class.is-invalid]="startDatetime.invalid && startDatetime.touched"
+                                [class.is-valid]="startDatetime.valid && startDatetime.touched" type="text"
+                                class="form-control qz-text-input">
                             <!-- <p>{{hostQuizForm.value.endDatetime}}</p> -->
                             <div class="input-group-append">
-                                <div (click)="showStartDateTimePicker = !showStartDateTimePicker" class="input-group-text qz-border">
+                                <div (click)="showStartDateTimePicker = !showStartDateTimePicker"
+                                    class="input-group-text qz-border">
                                     <i class="fas fa-calendar-alt"></i>
                                 </div>
                             </div>
                         </div>
                         <div *ngIf="startDatetime.invalid && startDatetime.touched">
-                            <small class="text-danger mx-2" *ngIf="startDatetime.errors?.required">Challenge start date & time is required.</small>
+                            <small class="text-danger mx-2" *ngIf="startDatetime.errors?.required">Challenge start date
+                                & time is required.</small>
                         </div>
                         <div [class.d-block]="showStartDateTimePicker" [class.d-none]="!showStartDateTimePicker">
-                            <dl-date-time-picker
-                                startView="day"
-                                maxView="year"
-                                minView="minute"
-                                minuteStep="5"
-                                formControlName="startDatetime"
-                            >
+                            <dl-date-time-picker startView="day" maxView="year" minView="minute" minuteStep="5"
+                                formControlName="startDatetime">
                             </dl-date-time-picker>
                         </div>
                     </div>
@@ -61,26 +69,25 @@
                     <div class="form-group">
                         <label class="qz-form-label" for="inputEndDateNTime">End Date & Time:</label>
                         <div class="input-group mb-3">
-                            <input value="{{hostQuizForm.value.endDatetime}}" formControlName="endDatetime"  [class.is-invalid]="endDatetime.invalid && endDatetime.touched"
-                            [class.is-valid]="endDatetime.valid && endDatetime.touched" type="text" class="form-control qz-text-input">
+                            <input value="{{hostQuizForm.value.endDatetime}}" formControlName="endDatetime"
+                                [class.is-invalid]="endDatetime.invalid && endDatetime.touched"
+                                [class.is-valid]="endDatetime.valid && endDatetime.touched" type="text"
+                                class="form-control qz-text-input">
                             <!-- <p>{{hostQuizForm.value.endDatetime}}</p> -->
                             <div class="input-group-append">
-                                <div (click)="showEndDateTimePicker = !showEndDateTimePicker" class="input-group-text qz-border">
+                                <div (click)="showEndDateTimePicker = !showEndDateTimePicker"
+                                    class="input-group-text qz-border">
                                     <i class="fas fa-calendar-alt"></i>
                                 </div>
                             </div>
                         </div>
                         <div *ngIf="endDatetime.invalid && endDatetime.touched">
-                            <small class="text-danger mx-2" *ngIf="endDatetime.errors?.required">Challenge end date & time is required.</small>
+                            <small class="text-danger mx-2" *ngIf="endDatetime.errors?.required">Challenge end date &
+                                time is required.</small>
                         </div>
                         <div [class.d-block]="showEndDateTimePicker" [class.d-none]="!showEndDateTimePicker">
-                            <dl-date-time-picker
-                                startView="day"
-                                maxView="year"
-                                minView="minute"
-                                minuteStep="5"
-                                formControlName="endDatetime"
-                            >
+                            <dl-date-time-picker startView="day" maxView="year" minView="minute" minuteStep="5"
+                                formControlName="endDatetime">
                             </dl-date-time-picker>
                         </div>
                     </div>
@@ -88,20 +95,58 @@
                     <div formGroupName="settings">
                         <h5>Challenge Settings:</h5>
                         <div class="custom-control custom-switch">
-                            <input formControlName="isTimeOn" type="checkbox" class="custom-control-input" id="isTimerOnSwitch">
-                            <label class="custom-control-label qz-form-label" for="isTimerOnSwitch">Question Timer</label>
+                            <input formControlName="isTimeOn" type="checkbox" class="custom-control-input"
+                                id="isTimerOnSwitch">
+                            <label class="custom-control-label qz-form-label" for="isTimerOnSwitch">Question
+                                Timer</label>
                         </div>
                         <div class="custom-control custom-switch">
-                            <input formControlName="isRandomQuestionsOn" type="checkbox" class="custom-control-input" id="isRandomQuestionsOnSwitch">
-                            <label class="custom-control-label qz-form-label" for="isRandomQuestionsOnSwitch">Randomize Question Order</label>
+                            <input formControlName="isRandomQuestionsOn" type="checkbox" class="custom-control-input"
+                                id="isRandomQuestionsOnSwitch">
+                            <label class="custom-control-label qz-form-label" for="isRandomQuestionsOnSwitch">Randomize
+                                Question Order</label>
                         </div>
                         <div class="custom-control custom-switch">
-                            <input formControlName="isRandomOptionsOn" type="checkbox" class="custom-control-input" id="isRandomOptionsOnSwitch">
-                            <label class="custom-control-label qz-form-label" for="isRandomOptionsOnSwitch">Randomize Option Order</label>
+                            <input formControlName="isRandomOptionsOn" type="checkbox" class="custom-control-input"
+                                id="isRandomOptionsOnSwitch">
+                            <label class="custom-control-label qz-form-label" for="isRandomOptionsOnSwitch">Randomize
+                                Option Order</label>
                         </div>
                     </div>
-                    
-                    <button [disabled]="!hostQuizForm.valid" type="submit" (click)="onClickSave()" class="btn btn-primary mt-5 btn-block qz-btn qz-bg-blue">Host</button>
+
+                    <!-- select winners -->
+
+                    <h5>Winners Award:</h5>
+                    <p>Minimum of 3 winners must be selected</p>
+                    <div class="row m-7">
+                        <!-- Datatable for list of quizzes -->
+                        <div class="col">
+                            <div class="qz-card table-box qz-rounded-corner-light">
+                                <table cellpadding="10">
+                                    <thead class="qz-bg-blue text-white">
+                                        <tr>
+                                            <th>Rank</th>
+                                            <th>Award</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class='thin-down-border' *ngFor="let row of rows; let i = index">
+                                            <td>{{ i + 1 }}</td>
+                                            <td><input type="number" [(ngModel)]="row.value" required></td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                                <button (click)="addRow()">Add Row</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--End winners selection-->
+
+                    <button [disabled]="!hostQuizForm.valid" type="submit" (click)="onClickSave()"
+                        class="btn btn-primary mt-5 btn-block qz-btn qz-bg-blue">Host</button>
                 </form>
             </div>
         </div>
@@ -109,18 +154,20 @@
     </div>
 </div>
 
-<div *ngIf="isError" class="alert alert-danger alert-dismissible mt-alerts fade show mx-4 qz-border qz-card-shadow" role="alert">
+<div *ngIf="isError" class="alert alert-danger alert-dismissible mt-alerts fade show mx-4 qz-border qz-card-shadow"
+    role="alert">
     <h4 class="alert-heading">Error !</h4>
     <p>{{errorMessage}}</p>
     <button (click)="dismissErrorAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
+        <span aria-hidden="true">&times;</span>
     </button>
 </div>
 
-<div *ngIf="isSuccess" class="alert alert-success alert-dismissible mt-alerts fade show mx-4 qz-border qz-card-shadow" role="alert">
+<div *ngIf="isSuccess" class="alert alert-success alert-dismissible mt-alerts fade show mx-4 qz-border qz-card-shadow"
+    role="alert">
     <h4 class="alert-heading">Success !</h4>
     <p>Quiz hosted successfully! You will automatically get redirected...</p>
-    <button  type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
 </div>

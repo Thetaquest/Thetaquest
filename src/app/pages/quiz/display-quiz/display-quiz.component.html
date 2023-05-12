@@ -1,62 +1,35 @@
-<div class='container-fluid'>
-<div class="row qz-bg-blue">
-  <div class="col"></div>
-  <div class="col-10">
-      <nav class="navbar navbar-dark navbar-expand-lg">
-          <div class="navbar-brand"><h2 class="text-white" routerLink="/teacherdashboard/quiztable" style="cursor: pointer;">ThetaQuest</h2></div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon text-white"></span>
-          </button>
-          <div class="nav-center">
-            <button style="color: rgb(23, 209, 16);" routerLink="/buytoken">Buytoken</button>
-            <button style="border-color: 5px solid black;">300.01QEC</button>
-            <button style="color: rgb(23, 209, 16);" routerLink="/cashout">Cashout</button>
-        </div>
-          <div class="collapse navbar-collapse navbar-default float-right" id="navbarNavDropdown">
-          <ul class="navbar-nav ml-auto topnav text-white">
-              <!-- <li class="nav-item px-2"><a class="nav-link" routerLink="/challenge/join-challenge">Play</a></li> -->
-              <li class="nav-item px-2"><a class="nav-link" routerLink="/teacherdashboard/quiztable">Quizzes</a></li>
-              <li class="nav-item px-2"><a class="nav-link" routerLink="/teacherdashboard/challengetable">Challenges</a></li>
-              <li class="nav-item px-2"><a class="nav-link" routerLink="/quiz/create">Create Quiz</a></li>
-              
-              <li class="nav-item px-2"><button class="btn qz-btn qz-bg-white" (click)="logout()">Logout</button></li>
-              <!-- <li><a routerLink="teacherprofile">Profile</a></li> -->
-          </ul>
-          </div>    
-      </nav>
-  </div>
-  <div class="col"></div>
-</div>
 
-<h1 style="margin-top: 70px; margin-left: 90px;"><b>{{title}}</b></h1>
-<div style="margin-top: 30px; margin-left: 90px;" class="table-box qz-card">
-  <table cellpadding="10 ">
-    <thead class="qz-bg-blue text-white">
-      <tr>
-        <th>Sr.No</th>
-        <th>Question</th>
-        <th>Option 1</th>
-        <th>Option 2</th>
-        <th>Option 3</th>
-        <th>Option 4</th>
-        <th>Correct Answer</th>
-      </tr>
-    </thead>
-    <tbody>
-      <ng-container *ngFor="let item of quiz_info">
-        <!-- iterate the `tableData` array -->
-        <ng-container *ngFor="let data of item.questions let i= index">
-      <tr >
-        <td>{{i+1}}</td>
-        <td >{{data.title}}</td>
-        <td>{{data.options.option1}}</td>
-        <td>{{data.options.option2}}</td>
-        <td>{{data.options.option3}}</td>
-        <td>{{data.options.option4}}</td>
-        <td>{{data.answers}}</td>
-      </tr>
-      </ng-container>
-      </ng-container>
-    </tbody>
-  </table>
-</div>
+  <div class="container-fluid" id="displayquiz">
+    <h1 style="margin-top: 70px; margin-left: 90px;"><b>{{title}}</b></h1>
+    <div style="margin-top: 30px; margin-left: 90px;" class="table-box qz-card">
+      <table cellpadding="10 ">
+        <thead class="qz-bg-blue text-white">
+          <tr>
+            <th>Sr.No</th>
+            <th>Question</th>
+            <th>Option 1</th>
+            <th>Option 2</th>
+            <th>Option 3</th>
+            <th>Option 4</th>
+            <th>Correct Answer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let item of quiz_info">
+            <!-- iterate the `tableData` array -->
+            <ng-container *ngFor="let data of item.questions let i= index">
+              <tr>
+                <td>{{i+1}}</td>
+                <td>{{data.title}}</td>
+                <td>{{data.options.option1}}</td>
+                <td>{{data.options.option2}}</td>
+                <td>{{data.options.option3}}</td>
+                <td>{{data.options.option4}}</td>
+                <td>{{data.answers}}</td>
+              </tr>
+            </ng-container>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>

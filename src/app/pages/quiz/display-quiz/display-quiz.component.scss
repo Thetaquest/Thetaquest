@@ -1,37 +1,44 @@
-
+#displayquiz {
+  background-image: url("../../../../assets/img/uses2.png");
+  background-size: cover;
+  background-position: center;
+  padding: 50px;
+}
+nav {
+  background-color: #004a54;
+}
 .nav-center {
   text-align: center;
   flex: 1;
+
 }
 
 .nav-center button {
   color: #333;
-  padding: 10px;
+  padding: 2px;
   border: none;
   border-radius: 5px;
 }
 
-
-section{
-  background-color: #f2f2f2;
-}
-
-
 nav{
   width: 100%;
+  height: 8%;
 }
 nav ul li a{
-  color: #f2f2f2;
+  color: #fff;
   text-decoration: none;
   font-size: 18px;
   border-radius: 5px;
   letter-spacing: 1px;
   transition: all 0.1s ease;
 }
+nav ul li a.active:focus {
+  color: #ffb727;
+}
 nav ul li a.active,
 nav ul li a:hover{
-  color: #111;
-  background: #fff;
+  color: #ffb727;
+  
 }
 
 .illustrations{
@@ -41,6 +48,107 @@ nav ul li a:hover{
   width: 70%;
 }
 
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+}
+
+a {
+  color: #ffb727;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffc85a;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# top button
+--------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 500px;
+}
+
+.cta {
+    display: flex;
+    padding: 10px 45px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    color: white;
+    background: #004a54;
+    transition: 1s;
+    box-shadow: 6px 6px 0 black;
+    transform: skewX(-15deg);
+}
+
+.cta:focus {
+   outline: none; 
+}
+
+.cta:hover {
+    transition: 0.5s;
+    box-shadow: 10px 10px 0 #ff2ae0;
+}
+
+.cta span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 0px;
+}
+
+.cta:hover  span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 45px;
+}
+
+  span {
+    transform: skewX(15deg) 
+  }
+
+  span:nth-child(2) {
+    width: 20px;
+    margin-left: 30px;
+    position: relative;
+    top: 12%;
+  }
+  
+/**************SVG****************/
+
+path.one {
+    transition: 0.4s;
+    transform: translateX(-60%);
+}
+
+path.two {
+    transition: 0.5s;
+    transform: translateX(-30%);
+}
+
+.cta:hover path.three {
+    animation: color_anim 1s infinite 0.2s;
+}
+
+.cta:hover path.one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover path.two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+}
 
 
 .table-box {

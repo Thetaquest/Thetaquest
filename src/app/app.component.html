@@ -1,3 +1,263 @@
-<router-outlet></router-outlet>
-<app-footer></app-footer>
-<app-chatbot></app-chatbot>
+<ng-container *ngIf="authService.isLoggedIn(); then loggedIn else notLoggedIn"></ng-container>
+
+<ng-template #loggedIn>
+    <ng-container *ngIf="userData.role === 'teacher'; then teacher else student"></ng-container>
+
+    <ng-template #teacher>
+        <!--Teacher Header-->
+        <div class="container-fluid">
+            <!-- NavBar for Teacher's Dashboard -->
+            <div class="row qz-bg-blue">
+                <div class="col"></div>
+                <div class="col-10">
+                    <nav class="navbar navbar-expand-md navbar-dark fixed-top custom-navbar"
+                        style="padding-left: 20px; padding-right: 20px;">
+                        <div class="navbar-brand">
+                            <h2 class="text-white" routerLink="/teacherdashboard/quiztable"
+                                style="cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 30px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #1e293b; text-shadow: 2px 2px 0 #fa8110;">
+                                ThetaQuest</h2>
+                        </div>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon text-white"></span>
+                        </button>
+                        <div class="nav-center">
+
+                            <!-- Change .nav-center button padding to 2px instead of 50 -->
+                            <div class=""><button data-testid="" class=""><img
+                                        style="width: 25px; height: 25px; border-radius: 50%;"
+                                        src="../../../assets/img/logo-coin.jpg" alt="CREDITS" class=""><span
+                                        style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; color: #312c25; text-shadow: 1px 1px 0 #333; border-radius: 5px;">4000</span></button>
+                            </div>
+
+                        </div>
+                        <div class="collapse navbar-collapse navbar-default float-right" id="navbarNavDropdown">
+                            <ul class="navbar-nav ml-auto topnav text-white">
+                                <!-- <li class="nav-item px-2"><a class="nav-link" routerLink="/challenge/join-challenge">Play</a></li> -->
+                                <li style="color: #fa8110;" class="nav-item px-2"><a class="nav-link"
+                                        routerLink="teacherdashboard/quiztable">Quizzes</a>
+                                </li>
+                                <li class="nav-item px-2"><a class="nav-link"
+                                        routerLink="teacherdashboard/challengetable">Challenges</a></li>
+                                <li class="nav-item px-2"><a class="nav-link" routerLink="/quiz/create">Create Quiz</a>
+                                </li>
+                                <li class="nav-item px-2"><button class="btn qz-btn qz-bg-white"
+                                        (click)="logout()">Logout</button></li>
+                                <!-- <li><a routerLink="teacherprofile">Profile</a></li> -->
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col"></div>
+            </div>
+
+        </div>
+        <!--end teacher header-->
+
+        <router-outlet></router-outlet>
+
+        <!--teacher footer-->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>About Us</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et
+                            dolore magna aliqua.</p>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Connect With Us</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#"><i class="fab fa-facebook fa-lg"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter fa-lg"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram fa-lg"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Footer Menu Teacher</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--End teacher footer-->
+
+        <app-chatbot></app-chatbot>
+    </ng-template>
+
+    <ng-template #student>
+        <!--Student Header -->
+        <div class="container-fluid">
+            <div class="row qz-bg-blue">
+                <div class="col"></div>
+                <div class="col-10">
+                    <nav class="navbar navbar-expand-md navbar-dark fixed-top custom-navbar">
+                        <div class="navbar-brand">
+                            <h2 class="text-white" routerLink="/studentdashboard/studentchallengetable"
+                                style="cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 30px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #1e293b; text-shadow: 2px 2px 0 #fa8110;">
+                                ThetaQuest</h2>
+                        </div>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="nav-center">
+                            <div class=""><button data-testid="" class=""><img
+                                        style="width: 25px; height: 25px; border-radius: 50%;"
+                                        src="../../../assets/img/logo-coin.jpg" alt="CREDITS" class=""><span
+                                        style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; color: #312c25; text-shadow: 1px 1px 0 #333; border-radius: 5px;">4000</span></button>
+                            </div>
+                        </div>
+                        <div class="collapse navbar-collapse float-right" id="navbarNavDropdown">
+                            <ul class="navbar-nav ml-auto topnav text-white">
+                                <li style="background-color: rgb(25, 226, 25); border-radius: 10px;"
+                                    class="nav-item px-2"><a class="nav-link"
+                                        routerLink="/challenge/join-challenge">Play</a></li>
+                                <li class="nav-item px-2"><a class="nav-link" routerLink="/participate">Participate</a>
+                                </li>
+                                <li class="nav-item px-2"><a class="nav-link"
+                                        routerLink="/studentdashboard/studentchallengetable">Challenges</a></li>
+                                <li class="nav-item px-2"><button (click)="logout()"
+                                        class="btn qz-btn qz-bg-white">Logout</button></li>
+                                <!-- <li><a routerLink="teacherprofile">Profile</a></li> -->
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col"></div>
+            </div>
+
+        </div>
+        <!--end student header-->
+
+        <router-outlet></router-outlet>
+
+        <!--Student footer-->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>About Us</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et
+                            dolore magna aliqua.</p>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Connect With Us</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#"><i class="fab fa-facebook fa-lg"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter fa-lg"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram fa-lg"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Footer Menu Student</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--End student footer-->
+        <app-chatbot></app-chatbot>
+    </ng-template>
+</ng-template>
+
+<ng-template #notLoggedIn>
+    <!--Not loggoed in header-->
+    <header class="header">
+        <div class="row qz-bg-blue">
+            <div class="col"></div>
+            <div class="col-10">
+                <nav class="navbar navbar-expand-md navbar-dark fixed-top custom-navbar">
+                    <div class="navbar-brand">
+                        <h2 class="text-white" routerLink="/"
+                            style="cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 30px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #1e293b; text-shadow: 2px 2px 0 #fa8110;">
+                            ThetaQuest</h2>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon text-white"></span>
+                    </button>
+                    <div class="collapse navbar-collapse navbar-default float-right" id="navbarNavDropdown">
+                        <ul class="navbar-nav ml-auto topnav text-white">
+
+                            <li class="nav-item px-2"><button class="btn qz-btn qz-bg-blue text-white"
+                                    routerLink="/login">Log
+                                    in</button></li>
+                            <li class="nav-item px-2"><button class="btn qz-btn qz-bg-white"
+                                    routerLink="/register">Sign up</button>
+                            </li>
+                            <!-- <li><a routerLink="teacherprofile">Profile</a></li> -->
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="col"></div>
+        </div>
+    </header>
+    <!--Not logged in header-->
+
+    <router-outlet></router-outlet>
+
+    <!--Not loggoed in footer-->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>About Us</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et
+                        dolore magna aliqua.</p>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Connect With Us</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fab fa-facebook fa-lg"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter fa-lg"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram fa-lg"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Footer Menu</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <app-chatbot></app-chatbot>
+</ng-template>

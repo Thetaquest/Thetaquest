@@ -1,0 +1,34 @@
+.connect {
+    text-align: center;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 48px;
+    font-weight: 600;
+    padding-top: 48px;
+  }
+  
+  .connectBtn {
+    background-color: #5547ff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+  }
+  
+  .connectBtn img {
+    width: 32px;
+    height: 24px;
+  }
+  
+  .connectBtnText {
+    font-size: 1rem;
+    padding-left: 6px;
+  }
+  

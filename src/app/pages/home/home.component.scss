@@ -436,6 +436,8 @@ section {
 
 .navbar {
   padding: 0;
+  padding-left: 5%;
+  padding-right: 5%;
   // background-color: #f0f0f0;
 }
 #navbut {
@@ -800,7 +802,8 @@ $main-blue: #0076bd !default;
 $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
 .dark {
-	background: #004a54;
+	// background: #004a54;
+  background: linear-gradient(to bottom, #ff2ae0, #645bf6);
 }
 
 .dark a, a:hover {
@@ -813,7 +816,7 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 	text-transform: uppercase;
 	text-align: center;
 	font-size: 2.5rem;
-  color: gold;
+  color: #004a54;
 }
 
 /* Cards */

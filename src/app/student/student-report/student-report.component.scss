@@ -1,18 +1,72 @@
+.navbar {
+  padding: 0;
+  padding-left: 3%;
+  padding-right: 3%;
+  background-color: #004a54;
+}
+.nav-center {
+  text-align: center;
+  flex: 1;
+
+}
+
+.nav-center button {
+  color: #333;
+  padding: 2px;
+  border: none;
+  border-radius: 5px;
+}
+
 nav{
   width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  // background-color: ;
 }
 nav ul li a{
-  color: #f2f2f2;
+  color: #fff;
   text-decoration: none;
   font-size: 18px;
   border-radius: 5px;
   letter-spacing: 1px;
   transition: all 0.1s ease;
 }
+nav ul li a.active:focus {
+  color: #ffb727;
+}
 nav ul li a.active,
 nav ul li a:hover{
-  color: #111;
-  background: #fff;
+  color: #ffb727;
+  
+}
+
+.illustrations{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+}
+
+a {
+  color: #ffb727;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffc85a;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
 }
   
 .challenge-meta-data {

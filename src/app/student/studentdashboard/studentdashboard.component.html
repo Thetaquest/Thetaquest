@@ -1,227 +1,205 @@
-<div class="container-fluid">
-  <div class="row qz-bg-blue">
-    <div class="col"></div>
-    <div class="col-10">
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top custom-navbar">
-        <div class="navbar-brand">
-          <h2 class="text-white" routerLink='/studentdashboard/studentchallengetable' style="cursor: pointer;">
-            ThetaQuest</h2>
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="nav-center">
-          <!-- <button style="color: rgb(23, 209, 16);" routerLink="/buytoken">Buytoken</button> -->
-          <button style="border-color: 5px solid black;">300.01QEC</button>
-          <!-- <button style="color: rgb(23, 209, 16);" routerLink="/cashout">Cashout</button> -->
-        </div>
-        <div class="collapse navbar-collapse float-right" id="navbarNavDropdown">
-          <ul class="navbar-nav ml-auto topnav text-white">
-            <li style="background-color: rgb(25, 226, 25); border-radius: 10px;" class="nav-item px-2"><a
-                class="nav-link" routerLink="/challenge/join-challenge">Play</a></li>
-            <li class="nav-item px-2"><a class="nav-link" routerLink="/participate">Participate</a></li>
-            <li class="nav-item px-2"><a class="nav-link"
-                routerLink="/studentdashboard/studentchallengetable">Challenges</a></li>
-            <li class="nav-item px-2"><button (click)="logout()" class="btn qz-btn qz-bg-white">Logout</button></li>
-            <!-- <li><a routerLink="teacherprofile">Profile</a></li> -->
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <div class="col"></div>
+<div class="row" id="studentpage">
+  <!-- Dashboard body part -->
+  <div class="col"></div>
+  <div class="col-sm-9">
+    <router-outlet></router-outlet>
   </div>
-  <div class="row" id="studentpage">
-    <!-- Dashboard body part -->
-    <div class="col"></div>
-    <div class="col-sm-9">
-      <router-outlet></router-outlet>
-    </div>
-    <div class="col"></div>
-  </div>
+  <div class="col"></div>
 </div>
 
-  <!--Card for list of Quiz-->
-  <section class="dark">
-    <div class="container py-4">
-      <h1 class="h1 text-center" id="pageHeaderTitle">QUIZ & CHALLENGES</h1>
+<!--Card for list of Quiz-->
+<section class="dark">
+  <div class="container py-4">
+    <h1 class="h1 text-center" id="pageHeaderTitle">QUIZ & CHALLENGES</h1>
 
-      <article class="postcard dark green">
-        <a class="postcard__img_link" href="#">
-          <img class="postcard__img" src="https://picsum.photos/500/501" alt="Image Title" />
-        </a>
-        <div class="postcard__text">
-          <h1 class="postcard__title green"><a routerLink="/blogdetails">Amazon Quiz</a></h1>
-          <div class="postcard__subtitle small">
-            <time datetime="2020-05-25 12:00:00">
-              <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
-            </time>
-          </div>
-          <div class="postcard__bar"></div>
-          <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat
-            asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo
-            accusantium
-            maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto
-            quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
-          <ul class="postcard__tagbox">
-            <li class="tag__item"><i class="fas fa-play mr-2"></i>4000</li>
-            <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
-            <li class="tag__item play green">
-              <a href="#"><i class="fas fa-tag mr-2"></i>PARTICIPATE</a>
-            </li>
-          </ul>
+    <article class="postcard dark green">
+      <a class="postcard__img_link" href="#">
+        <img class="postcard__img" src="https://picsum.photos/500/501" alt="Image Title" />
+      </a>
+      <div class="postcard__text">
+        <h1 class="postcard__title green"><a routerLink="/blogdetails">Amazon Quiz</a></h1>
+        <div class="postcard__subtitle small">
+          <time datetime="2020-05-25 12:00:00">
+            <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+          </time>
         </div>
-      </article>
-      <article class="postcard dark green">
-        <a class="postcard__img_link" href="#">
-          <img class="postcard__img" src="https://picsum.photos/500/501" alt="Image Title" />
-        </a>
-        <div class="postcard__text">
-          <h1 class="postcard__title green"><a routerLink="/blogdetails">META quiz</a></h1>
-          <div class="postcard__subtitle small">
-            <time datetime="2020-05-25 12:00:00">
-              <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
-            </time>
-          </div>
-          <div class="postcard__bar"></div>
-          <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat
-            asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo
-            accusantium
-            maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto
-            quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
-          <ul class="postcard__tagbox">
-            <li class="tag__item"><i class="fas fa-play mr-2"></i>20000</li>
-            <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
-            <li class="tag__item play green">
-              <a href="#"><i class="fas fa-tag mr-2"></i>PARTICIPATE</a>
-            </li>
-          </ul>
-        </div>
-      </article>
-      <article class="postcard dark green">
-        <a class="postcard__img_link" href="#">
-          <img class="postcard__img" src="https://picsum.photos/500/501" alt="Image Title" />
-        </a>
-        <div class="postcard__text">
-          <h1 class="postcard__title green"><a routerLink="/blogdetails">IBM quiz competion</a></h1>
-          <div class="postcard__subtitle small">
-            <time datetime="2020-05-25 12:00:00">
-              <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
-            </time>
-          </div>
-          <div class="postcard__bar"></div>
-          <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat
-            asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo
-            accusantium
-            maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto
-            quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
-          <ul class="postcard__tagbox">
-            <li class="tag__item"><i class="fas fa-play mr-2"></i>600000</li>
-            <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
-            <li class="tag__item play green">
-              <a href="#"><i class="fas fa-tag mr-2"></i>PARTICIPATE</a>
-            </li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- Quiz list Pagnation -->
-      <div class="quizpagination-container wow zoomIn mar-b-1x" data-wow-duration="0.5s">
-
-        <ul class="quizpagination">
-          <li class="quizpagination-item--wide first"> <a class="quizpagination-link--wide first" href="#">Previous</a>
-          </li>
-          <li class="quizpagination-item first-number"> <a class="quizpagination-link" href="#">1</a> </li>
-          <li class="quizpagination-item"> <a class="quizpagination-link" href="#">2</a> </li>
-          <li class="quizpagination-item is-active"> <a class="quizpagination-link" href="#">3</a> </li>
-          <li class="quizpagination-item"> <a class="quizpagination-link" href="#">4</a> </li>
-          <li class="quizpagination-item"> <a class="quizpagination-link" href="#">5</a> </li>
-          <li class="quizpagination-item--wide last"> <a class="quizpagination-link--wide last" href="#">Next</a> </li>
-        </ul>
-
-      </div>
-      <!--End of quiz list pagnation-->
-    </div>
-  </section>
-
-  <!-- ======= Winners Boxes Section ======= -->
-  <section id="about-boxes" class="about-boxes">
-    <div class="container">
-
-      <div class="section-title">
-
-        <p style="text-align: center;">ThetaQuest Winners</p>
-
-      </div>
-
-      <div class="row">
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-          <div class="card">
-            <div id="card-title">
-              <h2 style="text-align: center;">Mary Larence</h2>
-            </div>
-            <img src="../../../assets/img/img1.jpeg" class="card-img-top" alt="...">
-
-            <div class="card-body">
-              <h5 class="card-title"><button>8000 QET</button></h5>
-              <p class="card-text"><b>WINNER:</b> <br> Amazon quiz at closing up learning gaps
-                regardless of locations and
-                solve educational problems using technology and trained professionals. </p>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-          <div class="card">
-            <div id="card-title">
-              <h2 style="text-align: center;">John Bassy</h2>
-            </div>
-            <img src="../../../assets/img/img1.jpeg" class="card-img-top" alt="...">
-
-            <div class="card-body">
-              <h5 class="card-title"><button>5000 QET</button></h5>
-              <p class="card-text"><b>WINNER:</b> <br> Amazon quiz at closing up learning gaps
-                regardless of locations and
-                solve educational problems using technology and trained professionals. </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-          <div class="card">
-            <div id="card-title">
-              <h2 style="text-align: center;">Brown smith</h2>
-            </div>
-            <img src="../../../assets/img/img1.jpeg" class="card-img-top" alt="...">
-
-            <div class="card-body">
-              <h5 class="card-title"><button>300 QET</button></h5>
-              <p class="card-text"><b>WINNER:</b> <br> Amazon quiz at closing up learning gaps
-                regardless of locations and
-                solve educational problems using technology and trained professionals. </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Winner list Pagnation -->
-      <div class="winnerpagination-container wow zoomIn mar-b-1x" data-wow-duration="0.5s">
-
-        <ul class="winnerpagination">
-          <li class="winnerpagination-item--wide first"> <a class="winnerpagination-link--wide first"
-              href="#">Previous</a> </li>
-          <li class="winnerpagination-item first-number"> <a class="winnerpagination-link" href="#">1</a> </li>
-          <li class="winnerpagination-item"> <a class="winnerpagination-link" href="#">2</a> </li>
-          <li class="winnerpagination-item is-active"> <a class="winnerpagination-link" href="#">3</a> </li>
-          <li class="winnerpagination-item"> <a class="winnerpagination-link" href="#">4</a> </li>
-          <li class="winnerpagination-item"> <a class="winnerpagination-link" href="#">5</a> </li>
-          <li class="winnerpagination-item--wide last"> <a class="winnerpagination-link--wide last" href="#">Next</a>
+        <div class="postcard__bar"></div>
+        <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat
+          asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo
+          accusantium
+          maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto
+          quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+        <ul class="postcard__tagbox">
+          <li class="tag__item"><i class="fas fa-play mr-2"></i>4000</li>
+          <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
+          <li class="tag__item play green">
+            <a href="#"><i class="fas fa-tag mr-2"></i>PARTICIPATE</a>
           </li>
         </ul>
-
       </div>
-      <!--End of quiz list pagnation-->
+    </article>
+    <article class="postcard dark green">
+      <a class="postcard__img_link" href="#">
+        <img class="postcard__img" src="https://picsum.photos/500/501" alt="Image Title" />
+      </a>
+      <div class="postcard__text">
+        <h1 class="postcard__title green"><a routerLink="/blogdetails">META quiz</a></h1>
+        <div class="postcard__subtitle small">
+          <time datetime="2020-05-25 12:00:00">
+            <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+          </time>
+        </div>
+        <div class="postcard__bar"></div>
+        <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat
+          asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo
+          accusantium
+          maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto
+          quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+        <ul class="postcard__tagbox">
+          <li class="tag__item"><i class="fas fa-play mr-2"></i>20000</li>
+          <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
+          <li class="tag__item play green">
+            <a href="#"><i class="fas fa-tag mr-2"></i>PARTICIPATE</a>
+          </li>
+        </ul>
+      </div>
+    </article>
+    <article class="postcard dark green">
+      <a class="postcard__img_link" href="#">
+        <img class="postcard__img" src="https://picsum.photos/500/501" alt="Image Title" />
+      </a>
+      <div class="postcard__text">
+        <h1 class="postcard__title green"><a routerLink="/blogdetails">IBM quiz competion</a></h1>
+        <div class="postcard__subtitle small">
+          <time datetime="2020-05-25 12:00:00">
+            <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+          </time>
+        </div>
+        <div class="postcard__bar"></div>
+        <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat
+          asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo
+          accusantium
+          maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto
+          quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+        <ul class="postcard__tagbox">
+          <li class="tag__item"><i class="fas fa-play mr-2"></i>600000</li>
+          <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
+          <li class="tag__item play green">
+            <a href="#"><i class="fas fa-tag mr-2"></i>PARTICIPATE</a>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Quiz list Pagnation -->
+    <div class="quizpagination-container wow zoomIn mar-b-1x" data-wow-duration="0.5s">
+
+      <ul class="quizpagination">
+        <li class="quizpagination-item--wide first"> <a class="quizpagination-link--wide first" href="#">Previous</a>
+        </li>
+        <li class="quizpagination-item first-number"> <a class="quizpagination-link" href="#">1</a> </li>
+        <li class="quizpagination-item"> <a class="quizpagination-link" href="#">2</a> </li>
+        <li class="quizpagination-item is-active"> <a class="quizpagination-link" href="#">3</a> </li>
+        <li class="quizpagination-item"> <a class="quizpagination-link" href="#">4</a> </li>
+        <li class="quizpagination-item"> <a class="quizpagination-link" href="#">5</a> </li>
+        <li class="quizpagination-item--wide last"> <a class="quizpagination-link--wide last" href="#">Next</a> </li>
+      </ul>
 
     </div>
-  </section><!-- End Winners Boxes Section -->
+    <!--End of quiz list pagnation-->
+  </div>
+</section>
+
+<!-- ======= Winners Boxes Section ======= -->
+<section id="about-boxes" class="about-boxes">
+  <div class="container">
+
+    <div class="section-title">
+
+      <p style="text-align: center;">ThetaQuest Winners</p>
+
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="card">
+          <div id="card-title">
+            <h2 style="text-align: center;">Mary Larence</h2>
+          </div>
+          <img src="../../../assets/img/img1.jpeg" class="card-img-top" alt="...">
+
+          <div class="card-body">
+            <h5 class="card-title"><button data-testid="" class=""><img
+                  style="width: 25px; height: 25px; border-radius: 50%;" src="../../../assets/img/logo-coin.jpg"
+                  alt="CREDITS" class=""><span
+                  style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; color: #312c25; text-shadow: 1px 1px 0 #333; border-radius: 5px;">4000</span></button>
+            </h5>
+            <p class="card-text"><b>WINNER:</b> <br> Amazon quiz at closing up learning gaps
+              regardless of locations and
+              solve educational problems using technology and trained professionals. </p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="card">
+          <div id="card-title">
+            <h2 style="text-align: center;">John Bassy</h2>
+          </div>
+          <img src="../../../assets/img/img1.jpeg" class="card-img-top" alt="...">
+
+          <div class="card-body">
+            <h5 class="card-title"><button data-testid="" class=""><img
+                  style="width: 25px; height: 25px; border-radius: 50%;" src="../../../assets/img/logo-coin.jpg"
+                  alt="CREDITS" class=""><span
+                  style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; color: #312c25; text-shadow: 1px 1px 0 #333; border-radius: 5px;">4000</span></button>
+            </h5>
+            <p class="card-text"><b>WINNER:</b> <br> Amazon quiz at closing up learning gaps
+              regardless of locations and
+              solve educational problems using technology and trained professionals. </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="card">
+          <div id="card-title">
+            <h2 style="text-align: center;">Brown smith</h2>
+          </div>
+          <img src="../../../assets/img/img1.jpeg" class="card-img-top" alt="...">
+
+          <div class="card-body">
+            <h5 class="card-title"><button data-testid="" class=""><img
+                  style="width: 25px; height: 25px; border-radius: 50%;" src="../../../assets/img/logo-coin.jpg"
+                  alt="CREDITS" class=""><span
+                  style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; color: #312c25; text-shadow: 1px 1px 0 #333; border-radius: 5px;">4000</span></button>
+            </h5>
+            <p class="card-text"><b>WINNER:</b> <br> Amazon quiz at closing up learning gaps
+              regardless of locations and
+              solve educational problems using technology and trained professionals. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Winner list Pagnation -->
+    <div class="winnerpagination-container wow zoomIn mar-b-1x" data-wow-duration="0.5s">
+
+      <ul class="winnerpagination">
+        <li class="winnerpagination-item--wide first"> <a class="winnerpagination-link--wide first"
+            href="#">Previous</a> </li>
+        <li class="winnerpagination-item first-number"> <a class="winnerpagination-link" href="#">1</a> </li>
+        <li class="winnerpagination-item"> <a class="winnerpagination-link" href="#">2</a> </li>
+        <li class="winnerpagination-item is-active"> <a class="winnerpagination-link" href="#">3</a> </li>
+        <li class="winnerpagination-item"> <a class="winnerpagination-link" href="#">4</a> </li>
+        <li class="winnerpagination-item"> <a class="winnerpagination-link" href="#">5</a> </li>
+        <li class="winnerpagination-item--wide last"> <a class="winnerpagination-link--wide last" href="#">Next</a>
+        </li>
+      </ul>
+
+    </div>
+    <!--End of quiz list pagnation-->
+
+  </div>
+</section><!-- End Winners Boxes Section -->

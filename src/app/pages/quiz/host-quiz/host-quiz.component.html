@@ -114,10 +114,20 @@
                         </div>
                     </div>
 
-                    <!--Participation range-->
-                    
+                    <!--Perticipation range begin-->
+                    <br>
+                    <h5>Select Participation Fee:</h5>
+                    <p>You Can select Minimum of 5Tfuel to Maximum of 100Tfuel</p>
+                    <input type="number" min="5" max="100" id="participationRange" formControlName="participationRange"
+                        class="participationRange" placeholder="5"
+                        style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; color: #312c25; text-shadow: 1px 1px 0 #333; border-radius: 5px;"
+                        required>
+
+                    <br>
+
                     <!-- select winners -->
 
+                    <br>
                     <h5>Winners Award:</h5>
                     <p>Minimum of 3 winners must be selected</p>
                     <div class="row m-7">
@@ -155,7 +165,7 @@
                     <div class="form-group">
                         <br>
                         <h5>Display Image:</h5>
-                        <input type="file" formControlName="image" class="form-control-file" id="inputImage"
+                        <input type="file" formControlName="image" class="form-control-file" id="image"
                             style="border: 1px solid #ccc; padding: 10px; border-radius: 4px; background-color: #f8f8f8;">
                     </div>
 

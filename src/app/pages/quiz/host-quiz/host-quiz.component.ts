@@ -19,6 +19,7 @@ export class HostQuizComponent implements OnInit {
   isSuccess = false;
   errorMessage = '';
   private _authService: any;
+  
 
   rows: any[] = [
     { value: null },
@@ -82,6 +83,7 @@ onClickSave() {
     startDatetime: this.hostQuizForm.value.startDatetime,
     endDatetime: this.hostQuizForm.value.endDatetime,
     image: this.hostQuizForm.value.image,
+    participationRange: this.hostQuizForm.value.participationRange,
     rowsData: this.rows.map(row => row.value),
     sum: this.sum
   }

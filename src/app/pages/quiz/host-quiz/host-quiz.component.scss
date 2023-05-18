@@ -1,3 +1,33 @@
+/* your-component.css */
+.add-row-button {
+  padding: 10px 20px;
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.sum-container {
+  margin-top: 10px;
+}     
+
+.sum-label {
+  font-weight: bold;
+}
+
+.sum-value {
+  font-size: 18px;
+  color: #337ab7;
+}
+.custom-file-input {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+}
+
 #hostquiz {
     background-image: url("../../../../assets/img/uses1.png");
     background-size: cover;

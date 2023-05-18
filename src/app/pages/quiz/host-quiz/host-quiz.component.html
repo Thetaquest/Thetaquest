@@ -1,5 +1,5 @@
 <div class="container-fluid" id="hostquiz">
-    
+
     <br>
     <br>
 
@@ -114,6 +114,8 @@
                         </div>
                     </div>
 
+                    <!--Participation range-->
+                    
                     <!-- select winners -->
 
                     <h5>Winners Award:</h5>
@@ -130,19 +132,35 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class='thin-down-border' *ngFor="let row of rows; let i = index">
+                                        <tr class="thin-down-border" *ngFor="let row of rows; let i = index">
                                             <td>{{ i + 1 }}</td>
-                                            <td><input type="number" [(ngModel)]="row.value" required></td>
+                                            <td>
+                                                <input type="number" [(ngModel)]="row.value" (input)="calculateSum()"
+                                                    required>
+                                            </td>
                                         </tr>
-
-
                                     </tbody>
                                 </table>
-                                <button (click)="addRow()">Add Row</button>
-                            </div>
+                                <button class="add-row-button" (click)="addRow()">Add Row</button>
 
+                                <!-- <div class="sum-container">
+                                    <label class="sum-label">Total Sum:</label>
+                                    <span class="sum-value">{{ sum }}</span>
+                                </div> -->
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Image field -->
+                    <div class="form-group">
+                        <br>
+                        <h5>Display Image:</h5>
+                        <input type="file" formControlName="image" class="form-control-file" id="inputImage"
+                            style="border: 1px solid #ccc; padding: 10px; border-radius: 4px; background-color: #f8f8f8;">
+                    </div>
+
+
+
                     <!--End winners selection-->
 
                     <button [disabled]="!hostQuizForm.valid" type="submit" (click)="onClickSave()"

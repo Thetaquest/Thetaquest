@@ -21,7 +21,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@openzeppelin/contracts": "^4.7.0",
-    "@truffle/hdwallet-provider": "^2.0.10",
+    "@truffle/hdwallet-provider": "^2.1.11",
     "angular-bootstrap-datetimepicker": "^4.0.2",
     "bootstrap": "^4.6.2",
     "bootstrap-datetime-picker": "^2.4.4",
@@ -37,7 +37,7 @@
     "rxjs": "~6.6.0",
     "stacks": "^0.51.0",
     "tslib": "^2.0.0",
-    "web3": "^1.7.4",
+    "web3": "^1.10.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

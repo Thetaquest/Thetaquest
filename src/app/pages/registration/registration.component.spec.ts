@@ -50,9 +50,9 @@ fdescribe('RegistrationComponent', () => {
     expect(username).toBeTruthy;
   });
 
-  it('Password is valid', () => {
-    let password=component.registrationForm.controls.inputPassword;
-    expect(password).toBeTruthy;
+  it('Wallet Address is valid', () => {
+    const walletAddress = component.registrationForm.controls.inputWalletAddress;
+    expect(walletAddress).toBeTruthy();
   });
 
 

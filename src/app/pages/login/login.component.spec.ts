@@ -40,16 +40,17 @@ fdescribe('LoginComponent', () => {
     expect(testbedbgcolorservice instanceof BgColorService).toBeTruthy();
   });
 
-  it('Email is valid', () => {
-    let email=component.loginForm.controls.exampleInputEmail1;
-    expect(email).toBeTruthy;
+  it('Wallet address is valid', () => {
+    let walletAddress = component.loginForm.controls.walletAddress;
+    expect(walletAddress.valid).toBeTruthy();
   });
-
-  it('Password is valid', () => {
-    let password=component.loginForm.controls.exampleInputPassword1;
-    expect(password).toBeTruthy;
+  
+  it('Wallet address is required', () => {
+    let walletAddress = component.loginForm.controls.walletAddress;
+    walletAddress.setValue('');
+    expect(walletAddress.hasError('required')).toBeTruthy();
   });
-
+  
   // it('form invalid when empty', () => {
   //   expect(component.loginForm.valid).toBeFalsy();
   // });

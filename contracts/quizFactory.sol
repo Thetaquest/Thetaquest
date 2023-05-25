@@ -1,8 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.1;
 
-import "./theta-quest.sol";
-// import "./registration.sol";
+import "./QuizContractnew.sol";
 
 contract quizFactory {
     uint256 public maxEntrance;

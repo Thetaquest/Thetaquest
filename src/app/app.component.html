@@ -25,10 +25,10 @@
                         <div class="nav-center">
 
                             <!-- Change .nav-center button padding to 2px instead of 50 -->
-                            <div routerLink="/cashout" class=""><button data-testid="" class=""><img
+                            <div *ngIf="walletAddress" routerLink="/cashout" class=""><button data-testid="" class=""><img
                                         style="width: 25px; height: 25px; border-radius: 50%;"
                                         src="../../../assets/img/logo-coin.jpg" alt="CREDITS" class=""><span
-                                        style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; color: #312c25; text-shadow: 1px 1px 0 #333; border-radius: 5px;">4000</span></button>
+                                        style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; color: #312c25; text-shadow: 1px 1px 0 #333; border-radius: 5px;">{{ walletBalance }}</span></button>
                             </div>
 
                         </div>
@@ -117,10 +117,10 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="nav-center">
-                            <div routerLink="/cashout" class=""><button data-testid="" class=""><img
+                            <div *ngIf="walletAddress" routerLink="/cashout" class=""><button data-testid="" class=""><img
                                         style="width: 25px; height: 25px; border-radius: 50%;"
                                         src="../../../assets/img/logo-coin.jpg" alt="CREDITS" class=""><span
-                                        style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; color: #312c25; text-shadow: 1px 1px 0 #333; border-radius: 5px;">4000</span></button>
+                                        style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; color: #312c25; text-shadow: 1px 1px 0 #333; border-radius: 5px;">{{ walletBalance }}</span></button>
                             </div>
                         </div>
                         <div class="collapse navbar-collapse float-right" id="navbarNavDropdown">
@@ -264,3 +264,8 @@
 
     <app-chatbot></app-chatbot>
 </ng-template>
+
+<!-- <div *ngIf="walletAddress">
+    <p>Wallet Address: {{ walletAddress }}</p>
+    <p>Wallet Balance: {{ walletBalance }} ETH</p>
+  </div> -->

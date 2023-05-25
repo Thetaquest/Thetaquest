@@ -1,8 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.1;
 
-import "./theta-factoryQuest.sol";
-// import "./registration.sol";
+import "./quizFactory.sol";
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 

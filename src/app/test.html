@@ -1,0 +1,40 @@
+<div *ngIf="dataList">
+    <h2>Data List</h2>
+    <ul>
+        <li *ngFor="let data of dataList">
+            <h3>{{ data.title }}</h3>
+            <p>{{ data.description }}</p>
+            <p>Start Date: {{ data.startDatetime | date }}</p>
+            <p>End Date: {{ data.endDatetime | date }}</p>
+            <img [src]="data.image" alt="Image" />
+            <p>Participation Range: {{ data.participationRange }}</p>
+            <p>Rows Data: {{ data.rowsData | json }}</p>
+            <p>Sum: {{ data.sum }}</p>
+        </li>
+    </ul>
+</div>
+
+
+<div class="row m-7">
+    <!-- Datatable for list of quizzes -->
+    <div class="col">
+        <div class="qz-card table-box qz-rounded-corner-light">
+            <table cellpadding="10">
+                <thead class="qz-bg-blue text-white">
+                    <tr>
+                        <th>Rank</th>
+                        <th>Award</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="thin-down-border" *ngFor="let row of rows; let i = index">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{ data.rowsData[i] }}</td>
+                        <!-- <td>{{ hostQuizForm.value.rowsData[i] }}</td> -->
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

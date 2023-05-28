@@ -23,11 +23,9 @@ var challengeSchema = new mongoose.Schema({
         type: Date,
         required: true
     },
-
     isExpired: {
         type: Boolean,
         default: false
-
     },
     settings: {
         isTimeOn: { type: Boolean },
@@ -40,13 +38,10 @@ var challengeSchema = new mongoose.Schema({
         maxlength: 6,
         unique: true,
     },
-
-
     feedbacks: [
         {
             userId: {
                 type: String,
-                // required: true,
             },
             parameters: {
                 questionQuality: {
@@ -82,7 +77,6 @@ var challengeSchema = new mongoose.Schema({
             default: 0
         }
     },
-
     host: {
         name: {
             type: String,
@@ -93,27 +87,35 @@ var challengeSchema = new mongoose.Schema({
         {
             userId: {
                 type: String,
-
             },
             noOfCorrectAns: {
                 type: Number,
-
             },
             noOfWrongAns: {
                 type: Number,
-
             },
             score: {
                 type: Number,
-
             },
         }
     ],
-
     quiz_id: {
         type: String
+    },
+    image: {
+        type: String
+    },
+    participationRange: {
+        type: Number
+    },
+    rowsData: {
+        type: [Number]
+    },
+    sum: {
+        type: Number
     }
 });
+
 
 
 challengeSchema.methods.generatePin = function () {
@@ -196,7 +198,7 @@ challengeSchema.statics.insertFeedbackInChallengeById = async function (userId, 
 
     // adding feedback to challenge using push
     const quiz_update_player = await Challenge.findOneAndUpdate(
-        { _id: quiz_challenge_id },
+        { _id: quiz_challenge_id }, // Use quiz_challenge_id instead of quiz_challenge_id
         {
             $push: {
                 feedbacks: {
@@ -208,9 +210,9 @@ challengeSchema.statics.insertFeedbackInChallengeById = async function (userId, 
                     }
                 }
             }
-        },             //Store playerID and score
+        },
         { new: true }
-    )
+    );
 
     // for total ratings 
     // fetching challenge by id

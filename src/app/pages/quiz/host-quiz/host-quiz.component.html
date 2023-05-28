@@ -142,11 +142,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="thin-down-border" *ngFor="let row of rows; let i = index">
+                                        <tr class="thin-down-border" *ngFor="let row of hostQuizForm.controls.rowsData.controls; let i = index">
                                             <td>{{ i + 1 }}</td>
                                             <td>
-                                                <input type="number" [(ngModel)]="row.value" (input)="calculateSum()"
-                                                    required>
+                                                <input type="number" [formControl]="row" required>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -173,8 +172,11 @@
 
                     <!--End winners selection-->
 
-                    <button [disabled]="!hostQuizForm.valid" type="submit" (click)="onClickSave()"
+                    <button [disabled]="!hostQuizForm.valid" type="submit" 
                         class="btn btn-primary mt-5 btn-block qz-btn qz-bg-blue">Host</button>
+
+                    <!--<button [disabled]="!hostQuizForm.valid" type="submit" (click)="onClickSave()"
+                        class="btn btn-primary mt-5 btn-block qz-btn qz-bg-blue">Host</button>-->
                 </form>
             </div>
         </div>

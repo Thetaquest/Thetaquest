@@ -28,7 +28,11 @@ module.exports.viewAllReport = async(req,res) => {
                 "challenge_name":challenge.title,
                 "start_date":challenge.startDatetime,
                 "end_date":challenge.endDatetime,
-                "numberOfPlayers":challenge.players.length,
+
+                "sum":challenge.sum,
+                "description":challenge.description,
+                "image":challenge.image,
+                "participationRange":challenge.participationRange,
                 "challenge_id":challenge._id
     
             }
@@ -71,6 +75,11 @@ module.exports.viewAllReportStudent = async(req,res) => {
                 "start_date":challenge.startDatetime,
                 "end_date":challenge.endDatetime,
                 "numberOfPlayers":challenge.players.length,
+
+                "sum":challenge.sum,
+                "description":challenge.description,
+                "image":challenge.image,
+                "participationRange":challenge.participationRange,
                 "challenge_id":challenge._id
     
             }
@@ -107,6 +116,12 @@ module.exports.viewReportByIdSummary = async(req,res) => {
                 "hosted_by":challenge.host["name"],
                 "numberOfPlayers":challenge.players.length,
                 "game_pin":challenge.gamePIN,
+                
+
+                "sum":challenge.sum,
+                "description":challenge.description,
+                "image":challenge.image,
+                "participationRange":challenge.participationRange,
                 "numberOfQuestions":quiz.questions.length
     
             }

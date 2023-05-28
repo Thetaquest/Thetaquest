@@ -63,7 +63,7 @@ export class HostQuizComponent implements OnInit {
     const rowsData = this.hostQuizForm.value.rowsData;
     const sum = rowsData.reduce((acc, curr) => acc + curr, 0);
     this.hostQuizForm.patchValue({ sum });
-    // alert(sum);
+    alert(sum);
   
     const challengeData = {
       title: this.hostQuizForm.value.title,
@@ -99,6 +99,47 @@ export class HostQuizComponent implements OnInit {
   showEndDateTimePickerFn() {
     this.showEndDateTimePicker = true;
   }
+
+//   onClickSave() {
+//     const challengeData = {
+//       title: this.hostQuizForm.value.title,
+//       description: this.hostQuizForm.value.description,
+//       startDatetime: this.hostQuizForm.value.startDatetime,
+//       endDatetime: this.hostQuizForm.value.endDatetime,
+//       image: this.hostQuizForm.value.image,
+//       participationRange: this.hostQuizForm.value.participationRange,
+//       rowsData: this.hostQuizForm.value.rowsData,
+//       sum: this.hostQuizForm.value.sum
+//     };
+
+//     this.challengeservice.createChallenge(challengeData, this.quizId).subscribe(
+//       (response) => {
+//         console.log(response);
+//         if (response['success']) {
+//           this.isSuccess = true;
+//           setTimeout(() => {
+//             this._router.navigate(['/teacherdashboard/challengetable']);
+//           }, 3000);
+//         }
+//       },
+//       (error) => {
+//         console.log(error);
+//         this.isError = true;
+//         this.errorMessage = error.error?.error?.message;
+//         if (error.error instanceof ErrorEvent) {
+//           this.errorMessage = `${error.error.message}`;
+//         }
+//         if (!this.errorMessage) {
+//           if (error.status == 0 || error.status == 500) {
+//             this.errorMessage = 'Something wrong at server side. Sorry for inconvenience!';
+//           }
+//           if (!this.errorMessage) {
+//             this.errorMessage = error.message;
+//           }
+//         }
+//       }
+//     );
+//   }
 
   logout() {
     console.log('in logout');

@@ -33,12 +33,10 @@ import { BlogIntComponent } from './participate/blog-int/blog-int.component';
 import { CreateBlogComponent } from './participate/create-blog/create-blog.component'; 
 import { CreateIntComponent } from './participate/create-int/create-int.component'; 
 import { CreatedBlogListComponent } from './participate/created-blog-list/created-blog-list.component'; 
-import { WalletconnectComponent } from './walletconnect/walletconnect.component';
+// import { WalletconnectComponent } from './walletconnect/walletconnect.component';
 
 const routes: Routes = [
-  { path: 'buytoken', component: BuytokenComponent },
-  { path: 'cashout', component: CashoutComponent },
-  { path: 'walletconnect', component: WalletconnectComponent },
+//   { path: 'walletconnect', component: WalletconnectComponent },
   { path: 'participate', component: ParticipateComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'blogdetails', component: BlogDetailsComponent },
@@ -49,6 +47,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'quiz/create', component: CreateQuizComponent, canActivate: [AuthGuard] },
+  { path: 'cashout', component: CashoutComponent, canActivate: [AuthGuard] },
+  { path: 'buytoken', component: BuytokenComponent, canActivate: [AuthGuard] },
   {
     path: 'teacherdashboard', component: TeacherDashboardComponent,
     children: [

@@ -6,7 +6,7 @@ ThetaQuest is a learning platform that uses blockchain technology for a secure e
 - `npm install`
  - Ensure you have truffle installed on your system and Metamask install on your chrome browser
  - run `truffle compile`
- - run `truffle migrate --network theta_testnet`
+ - run `truffle migrate --reset` or `truffle migrate --network theta_testnet`
 
 Before starting the application, first create a database in mongo named "quizzards"
 <br/>

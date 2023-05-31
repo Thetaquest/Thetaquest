@@ -3,7 +3,11 @@
 ThetaQuest is a learning platform that uses blockchain technology for a secure educational experience. An escrow contract handles transactions and ensures funds are secure. ThetaQuest is a community that connects students with peers and educators to collaborate and learn together.
 
 ## Development server for the Thetaquest App workthrough
- 
+- `npm install`
+ - Ensure you have truffle installed on your system and Metamask install on your chrome browser
+ - run `truffle compile`
+ - run `truffle migrate --network theta_testnet`
+
 Before starting the application, first create a database in mongo named "quizzards"
 <br/>
 To start the Server :
@@ -15,7 +19,7 @@ Open another terminal
 run ` npm install `
 2. `node index.js`
    <br/>
-3. Ensure you have truffle installed on your system and Metamask install on your chrome browser
+ 
 
 To run the application on the browser: Back to your first terminal<br/>
 

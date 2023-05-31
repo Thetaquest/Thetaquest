@@ -11,7 +11,7 @@ import Web3 from 'web3';
 export class CashoutComponent implements OnInit {
   web3: any;
   amount: any;
-  toAddress: string; // Added: variable to hold the recipient address
+  toAddress: string;
 
   constructor(public authService: AuthService, private router: Router) {}
 
@@ -19,11 +19,13 @@ export class CashoutComponent implements OnInit {
   public userData;
   public walletAddress: string;
   public walletBalance: number;
+  public contractABI: any; // Add a variable to hold the contract ABI
 
   async ngOnInit() {
     if (this.authService.isLoggedIn()) {
       this.userData = this.authService.getUserData();
       await this.initializeWeb3();
+      await this.loadContractABI(); // Load the contract ABI
     }
   }
 
@@ -31,7 +33,7 @@ export class CashoutComponent implements OnInit {
     if (typeof window.ethereum !== 'undefined') {
       await window.ethereum.request({ method: 'eth_requestAccounts' });
       const provider = new Web3(window.ethereum);
-      this.web3 = provider; // Added: assign the provider to the web3 variable
+      this.web3 = provider;
       this.walletAddress = (await provider.eth.getAccounts())[0];
       this.getWalletBalance(provider);
     } else {
@@ -44,21 +46,30 @@ export class CashoutComponent implements OnInit {
     this.walletBalance = parseFloat(provider.utils.fromWei(balance, 'ether'));
   }
 
-  async transferCoins(): Promise<void> { // Modified: removed toAddress parameter
+  async loadContractABI() {
+    const response = await fetch('/build/contracts/ERC20.json'); // Adjust the path to match the location of your quizfactory.json file
+    const data = await response.json();
+    this.contractABI = data.abi;
+  }
+
+  async transferTokens(): Promise<void> {
     const accounts = await this.web3.eth.getAccounts();
     const fromAddress = accounts[0];
 
     try {
+      const contractAddress = '0xCE285e9B397DF00889e3BF681eCc3bbf4170d243';
+      const contract = new this.web3.eth.Contract(this.contractABI, contractAddress);
+
       const transaction = {
         from: fromAddress,
-        to: this.toAddress, // Modified: use the toAddress variable
-        value: this.web3.utils.toWei(this.amount.toString(), 'ether'),
+        to: contractAddress,
+        data: contract.methods.transfer(this.toAddress, this.amount).encodeABI()
       };
 
       await this.web3.eth.sendTransaction(transaction);
-      console.log('Coins transferred successfully.');
+      console.log('Tokens transferred successfully.');
     } catch (error) {
-      console.error('Error transferring coins:', error);
+      console.error('Error transferring tokens:', error);
     }
   }
 

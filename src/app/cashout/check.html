@@ -9,7 +9,7 @@
                 <div class="jumbotron jumbotron-flat">
                     <div class="center">
                         <p>Your Wallet Address: {{ walletAddress }}</p>
-                        <h2><i>BALANCE</i>:<i>{{ walletBalance }} TFUEL</i></h2>
+                        <h2><i>BALANCE</i>:<i>{{ walletBalance }} ETH</i></h2>
                     </div>
                     <!-- <div class="paymentAmt">0.005QUEST = $100</div> -->
 
@@ -26,6 +26,10 @@
                                     <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
                                         <li class="nav-item">
                                             <a data-toggle="pill" href="#credit-card" class="nav-link active"> <i
+                                                    class="fas fa-coins mr-2"></i>Cashout Coin</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a data-toggle="pill" href="#paypal" class="nav-link"> <i
                                                     class="fas fa-coins mr-2"></i>Transfer Coin</a>
                                         </li>
 
@@ -36,7 +40,7 @@
                                 <div class="tab-content">
                                     <!-- credit card info-->
                                     <div id="credit-card" class="tab-pane fade show active pt-3">
-                                        <form (ngSubmit)="transferTokens()" role="form">
+                                        <form (ngSubmit)="transferCoins()" role="form">
 
                                             <div class="form-group">
                                                 <label for="recipientAddress">
@@ -65,12 +69,48 @@
 
                                             <div class="card-footer"><button type="submit"
                                                     class="subscribe btn btn-block shadow-sm"
-                                                    style="background-color: rgb(247, 31, 67);">Send Token</button>
+                                                    style="background-color: rgb(247, 31, 67);">Cash Out</button>
                                             </div>
                                         </form>
                                     </div>
                                     <!-- End -->
-                                    
+                                    <!-- Paypal info -->
+                                    <div id="paypal" class="tab-pane fade pt-3">
+                                        <form (ngSubmit)="transferCoins()" role="form">
+                                            
+                                            <div class="form-group">
+                                                <label for="recipientAddress">
+                                                    <h6>Recipient Address:</h6>
+                                                </label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="recipientAddress"
+                                                        [(ngModel)]="toAddress" placeholder="Valid coin Address"
+                                                        class="form-control" required />
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text text-muted"> <i
+                                                                class="fas fa-coins mx-1"></i> </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="transferAmount">
+                                                    <h6>Amount to Transfer</h6>
+                                                </label>
+                                                <input type="number" name="amount" id="transferAmount"
+                                                    [(ngModel)]="amount" placeholder="Amount to Transfer" required
+                                                    class="form-control" />
+                                            </div>
+                                            
+
+                                            <div class="card-footer"><button type="submit"
+                                                    class="subscribe btn btn-block shadow-sm"
+                                                    style="background-color: rgb(247, 31, 67);">Transfer Coin</button>
+                                            </div>
+                                        </form>
+
+                                        <!-- End -->
+                                    </div>
                                 </div>
                             </div>
                         </div>

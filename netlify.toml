@@ -1,6 +1,6 @@
 [build]
   command = "ng build --prod"
-  publish = "dist/thetaquest-app"
+  publish = "dist/quizzards-client"
 
 [[redirects]]
   from = "/*"

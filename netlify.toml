@@ -1,8 +1,0 @@
-[build]
-  command = "ng build --prod"
-  publish = "dist/quizzards-client"
-
-[[redirects]]
-  from = "/*"
-  to = ""
-  status = 200

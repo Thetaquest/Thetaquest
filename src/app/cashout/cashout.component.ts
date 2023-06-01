@@ -47,7 +47,7 @@ export class CashoutComponent implements OnInit {
   }
 
   async loadContractABI() {
-    const response = await fetch('/build/contracts/ERC20.json'); // Adjust the path to match the location of your quizfactory.json file
+    const response = await fetch('../../../build/contracts'); // Adjust the path to match the location of your quizfactory.json file
     const data = await response.json();
     this.contractABI = data.abi;
   }

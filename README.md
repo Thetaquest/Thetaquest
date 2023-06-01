@@ -19,7 +19,7 @@ Open another terminal
 run ` npm install `
 2. `node index.js`
    <br/>
- 
+
 
 To run the application on the browser: Back to your first terminal<br/>
 

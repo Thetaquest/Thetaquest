@@ -1,188 +1,123 @@
+<div class="container-fluid" id="hostquiz">
 
-  <!--Card for list of Quiz-->
-  <section class="dark">
-    <div class="container">
-      <article class="postcard dark green">
-        <a class="postcard__img_link" routerLink="/blogdetails">
-          <img class="postcard__img" src="https://picsum.photos/500/501" alt="Image Title" />
-        </a>
-        <div class="postcard__text">
-          <h1 class="postcard__title green"><a routerLink="/blogdetails">Amazon Quiz</a></h1>
-          <div class="postcard__subtitle small">
-            <time datetime="2020-05-25 12:00:00">
-              <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
-            </time>
+  <br>
+  <br>
+
+  <div class="row">
+      <div class="col"></div>
+      <div class="col-11 col-xl-10">
+        
+
+          <div class="card qz-card qz-card-rounded qz-card-shadow mt-2 mx-4 p-5">
+              <h3>Create Quiz Details</h3>
+              <p>After hosting a quiz, It is advisable to create more details about the quiz.</p>
+              
+              <form>
+
+                  <!-- Challenge Title -->
+                  <div class="form-group">
+                      <label class="qz-form-label" for="inputTitle">Title:</label>
+                      <input type="text" formControlName="title" [class.is-invalid]="title.invalid && title.touched"
+                          [class.is-valid]="title.valid && title.touched" class="form-control qz-text-input"
+                          id="inputTitle" placeholder="Enter title for challenge..">
+                      <div *ngIf="title.invalid && title.touched">
+                          <small class="text-danger mx-2" *ngIf="title.errors?.required">Challenge title is
+                              required.</small>
+                      </div>
+                  </div>
+                  <!-- Challenge Description -->
+                  <div class="form-group">
+                      <label class="qz-form-label" for="inputDesc">Desciption:</label>
+                      <textarea type="text" formControlName="description"
+                          [class.is-valid]="description.valid && description.touched"
+                          class="form-control qz-text-input" id="inputDesc"
+                          placeholder="Enter desciption for challenge.."></textarea>
+                  </div>
+                  
+                  
+
+                  
+                  <!-- Video section -->
+
+                  <br>
+                  <h5>Video section:</h5>
+                  <p>Explain more about your quiz with Vidoes</p>
+                  <div class="row m-7">
+                      <!-- Datatable for list of quizzes -->
+                      <div class="col">
+                          <div class="qz-card table-box qz-rounded-corner-light">
+                              <table cellpadding="10">
+                                  <thead class="qz-bg-blue text-white">
+                                      <tr>
+                                          <th>List</th>
+                                          <th>Title</th>
+                                          <th>Discription</th>
+                                          <th>Link</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr class="thin-down-border" *ngFor="let row of hostQuizForm.controls.rowsData.controls; let i = index">
+                                          <td>{{ i + 1 }}</td>
+                                          <td>
+                                              <input type="text" [formControl]="row" required>
+                                          </td>
+                                          <td>
+                                            <input type="text" [formControl]="row" required>
+                                        </td>
+                                        <td>
+                                          <input type="url" [formControl]="row" required>
+                                      </td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                              <button class="add-row-button" (click)="addRow()">Add Row</button>
+
+                              <!-- <div class="sum-container">
+                                  <label class="sum-label">Total Sum:</label>
+                                  <span class="sum-value">{{ sum }}</span>
+                              </div> -->
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Image field -->
+                  <div class="form-group">
+                      <br>
+                      <h5>Display Image:</h5>
+                      <input type="file" formControlName="image" class="form-control-file" id="image"
+                          style="border: 1px solid #ccc; padding: 10px; border-radius: 4px; background-color: #f8f8f8;">
+                  </div>
+
+
+
+                  <!--End winners selection-->
+
+                  <button [disabled]="!hostQuizForm.valid" type="submit" 
+                      class="btn btn-primary mt-5 btn-block qz-btn qz-bg-blue">Host</button>
+
+                  <!--<button [disabled]="!hostQuizForm.valid" type="submit" (click)="onClickSave()"
+                      class="btn btn-primary mt-5 btn-block qz-btn qz-bg-blue">Host</button>-->
+              </form>
           </div>
-          <div class="postcard__bar"></div>
-          <div class="postcard__preview-txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat
-            asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium
-            maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto
-            quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
-            <button data-testid="" class=""><img
-              style="width: 25px; height: 25px; border-radius: 50%;" src="../../../assets/img/logo-coin.jpg"
-              alt="CREDITS" class=""><span
-              style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; color: #312c25; text-shadow: 1px 1px 0 #333; border-radius: 5px;">4000</span></button>
-          <ul class="postcard__tagbox">
-            <li class="tag__item"><i class="fas fa-play mr-2"></i>4000</li>
-            <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
-            <li style="background-color: #004a54; color: azure;" class="tag__item play green">
-              <a href="#"><i class="fas fa-tag mr-2"></i>START QUIZ</a>
-            </li>
-          </ul>
-        </div>
-      </article>
-  
-      <div class="card-content">
-        <h1 style="color: azure;" class="card-title">Exhilarating to Watch</h1>
-        <p>Shaking up the Australian blues scene, award-winning international artist Zee Gachette will be setting the
-          stage alight with her high octane energy modern blues, psyche rock, folk n’ funk. Zee’s inimitable talent for
-          improvising onstage is simply exhilarating to watch, inspiring standing ovations from music legends like Jimmy
-          Page (Led Zeppelin), Roger Daltrey (The Who) and Amy Winehouse. A show not to be missed!
-        </p>
       </div>
-  
-  
-    </div>
-  </section>
-  
-  
-  <section class="blogdetails">
-    <div class="container">
-      <div class="section-title">
-  
-        <p style="text-align: center;">More content about the quiz</p>
-  
-      </div>
-      <div class="row">
-        <div class="col-md-6 ">
-          <div class="card">
-            <div class="card-image">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe width="280" height="157" src="https://www.youtube.com/embed/DQ6Cjq6diLk" frameborder="0"
-                  allowfullscreen></iframe>
-                <div class="content">
-                  <h1>The Timbers</h1>
-                </div><!--end div class content-->
-              </div><!--End Div embed-responsive-->
-  
-            </div>
-            <!-- card image -->
-  
-            <div class="card-content">
-              <span class="card-title">Thumping Rhythms</span>
-              <p>THE TIMBERS’ thumping rhythms and big misty mountain melodies will cast you away to a sweaty, smoky,
-                melting-pot of folk, roots and Celtic bushman brassy punk. They rollick and hammer their way through live
-                gigs with abundant energy and have become festival favourites throughout Australia.</p>
-  
-            </div>
-            <!-- card content -->
-  
-          </div>
-        </div>
-        <div class="col-md-6 ">
-          <div class="card">
-            <div class="card-image">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/LR6xXs4lDsA" frameborder="0"
-                  allowfullscreen></iframe>
-                <div class="content">
-                  <h1>Z-STAR Trinity</h1>
-  
-                </div>
-              </div>
-  
-            </div>
-            <!-- card image -->
-            <div class="card-content">
-              <span class="card-title">Exhilarating to Watch</span>
-              <p>Shaking up the Australian blues scene, award-winning international artist Zee Gachette will be setting
-                the stage alight with her high octane energy modern blues, psyche rock, folk n’ funk. Zee’s inimitable
-                talent for improvising onstage is simply exhilarating to watch, inspiring standing ovations from music
-                legends like Jimmy Page (Led Zeppelin), Roger Daltrey (The Who) and Amy Winehouse. A show not to be
-                missed!
-              </p>
-            </div>
-            <!-- card content -->
-          </div>
-        </div>
-      </div>
-  
-      <div class="row">
-        <div class="col-md-6 ">
-          <div class="card">
-            <div class="card-image">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/JAdVqLMdDhY" frameborder="0"
-                  allowfullscreen></iframe>
-                <div class="content">
-                  <h1>Dubarray</h1>
-  
-                </div>
-              </div>
-  
-            </div>
-            <!-- card image -->
-  
-            <div class="card-content">
-              <span class="card-title">Uplifting, Soulful & Euphoric</span>
-              <p>Uplifting, Soulful & Euphoric, Dubarray combine a fresh fusion of boundary bending world music that
-                infuses such styles as trip-hop, funk, reggae, dancehall, drum & bass, house and tribal grooves layered on
-                a bed electronic ambience and organic undertones.</p>
-  
-  
-            </div>
-            <!-- card content -->
-  
-          </div>
-        </div>
-        <div class="col-md-6 ">
-          <div class="card">
-            <div class="card-image">
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/HUC7nfQxVDI" frameborder="0"
-                  allowfullscreen></iframe>
-                <div class="content">
-                  <h1>The Sexicclesiastes</h1>
-  
-  
-                </div>
-              </div>
-  
-            </div>
-            <!-- card image -->
-  
-            <div class="card-content">
-              <span class="card-title">Psychedelic Punk Folk</span>
-              <p>Having been described as a "raucous circus of hyper speed gypsy rock” embracing "just about every element
-                of theatrical rock & roll in existence”, this psychedelic punk folk outfit has been bringing their
-                vigorous foot stomping hectic good times tunage to Palm Creek for at least 15 years. The heat has caused
-                their memories to be a little hazy. </p>
-            </div>
-            <!-- card content -->
-  
-          </div>
-        </div>
-      </div><!--end row-->
-  
-      <!-- blogdetails list Pagnation -->
-      <div class="winnerpagination-container wow zoomIn mar-b-1x" data-wow-duration="0.5s">
-  
-        <ul class="winnerpagination">
-          <li class="winnerpagination-item--wide first"> <a class="winnerpagination-link--wide first"
-              href="#">Previous</a> </li>
-          <li class="winnerpagination-item first-number"> <a class="winnerpagination-link" href="#">1</a> </li>
-          <li class="winnerpagination-item"> <a class="winnerpagination-link" href="#">2</a> </li>
-          <li class="winnerpagination-item is-active"> <a class="winnerpagination-link" href="#">3</a> </li>
-          <li class="winnerpagination-item"> <a class="winnerpagination-link" href="#">4</a> </li>
-          <li class="winnerpagination-item"> <a class="winnerpagination-link" href="#">5</a> </li>
-          <li class="winnerpagination-item--wide last"> <a class="winnerpagination-link--wide last" href="#">Next</a>
-          </li>
-        </ul>
-  
-      </div>
-      <!--End of blogdetails list pagnation-->
-  
-  
-    </div><!--end container-->
-  </section>
-  <script src="script.js"></script>
+      <div class="col"></div>
+  </div>
+</div>
+
+<div *ngIf="isError" class="alert alert-danger alert-dismissible mt-alerts fade show mx-4 qz-border qz-card-shadow"
+  role="alert">
+  <h4 class="alert-heading">Error !</h4>
+  <p>{{errorMessage}}</p>
+  <button (click)="dismissErrorAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div *ngIf="isSuccess" class="alert alert-success alert-dismissible mt-alerts fade show mx-4 qz-border qz-card-shadow"
+  role="alert">
+  <h4 class="alert-heading">Success !</h4>
+  <p>Quiz hosted successfully! You will automatically get redirected...</p>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+  </button>
+</div>

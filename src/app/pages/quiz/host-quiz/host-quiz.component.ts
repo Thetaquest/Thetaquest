@@ -45,6 +45,7 @@ export class HostQuizComponent implements OnInit {
     });
   }
 
+  // ../../../../../build/contracts/
   ngOnInit(): void {
     this._bgColorService.updateBodyClass('qz-bg-blue');
     this.quizId = this._Activatedroute.snapshot.paramMap.get('quiz_id');

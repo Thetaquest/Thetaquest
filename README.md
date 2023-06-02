@@ -1,5 +1,3 @@
-# ThetaQuest
-
 ## **Inspiration** ✨💡🚀
 **The inspiration behind ThetaQuest is to revolutionize the education sector by leveraging the power of blockchain technology, specifically the Theta blockchain.** We were driven by a vision to create an innovative and secure learning platform that combines gamification elements with the transparency and immutability of the blockchain. 
 
@@ -9,6 +7,7 @@
 ThetaQuest is not just another educational platform, but a gateway to a world of knowledge and excitement. It enables students to embark on thrilling quests, challenging quizzes, and interactive challenges created by passionate teachers. By paying with ThetaNFT or ThetaPass tokens, students gain access to a captivating learning environment where their progress and achievements are seamlessly recorded on the Theta blockchain. 
 The platform harnesses the power of smart contracts to automatically determine quiz winners and instantly transfer unique NFTs as a token of recognition. Through intuitive dashboards, teachers can create personalized quizzes, set rewards, and track student performance, fostering a vibrant community of learning enthusiasts.
 
+## ThetaQuest-Architecture
 ![Alt text](https://i.imgur.com/JdiJMaN.png)
 
 **About the App** 🚀✨
@@ -40,7 +39,7 @@ Throughout the development process, we encountered a series of challenges that t
 ## **Accomplishments that we're proud of** 🏆🙌🎉
 We are immensely proud of the accomplishments we've achieved with ThetaQuest. Seamlessly integrating web3 technologies, we successfully harnessed the power of the Theta blockchain to create a secure and transparent learning environment. Our smart contract implementation ensures seamless token transfers and NFT rewards, providing students with tangible recognition for their achievements. 
 
-_**We take pride in the user-friendly dashboards we've developed, empowering both teachers and students to navigate the platform effortlessly. By gamifying the learning experience, we've created an engaging ecosystem that inspires a love for knowledge and encourages continuous growth. We are honoured to be part of the educational revolution enabled by the Theta blockchain.**_
+_We take pride in the user-friendly dashboards we've developed, empowering both teachers and students to navigate the platform effortlessly. By gamifying the learning experience, we've created an engaging ecosystem that inspires a love for knowledge and encourages continuous growth. We are honoured to be part of the educational revolution enabled by the Theta blockchain._
 
 ## **What we learned** 🧠📚💡
 Developing ThetaQuest has been a profound learning experience for our team. We deepened our understanding of blockchain integration, smart contract development, and web3 interactions. By incorporating gamification principles and applying user-centred design, we gained valuable insights into creating captivating and immersive educational experiences. 
@@ -69,7 +68,7 @@ _ThetaQuest is just the beginning of our mission to revolutionize education, and
 
 📱 **Mobile App Development:** To ensure accessibility for students on various devices, we plan to develop a mobile app, enabling them to participate and learn on the go. 📱✨📚
 
-### **Impact of our App:** 🌟🌍📚
+### **Impact of our App** 🌟🌍📚
 - Enhancing learning outcomes through interactive quizzes.
 - Promoting equal access to education globally.
 - Fostering a healthy sense of competition among students.
@@ -79,36 +78,10 @@ _ThetaQuest is just the beginning of our mission to revolutionize education, and
 - Creating a supportive community of learners.
 - Driving innovation in education through blockchain technology.
 
-## **Team that made it happen:** 🤝💡💪
-| Name| Age | Email | Country|
+## **Team that made it happen** 🤝💡💪
+| Name | Age | Email | Country |
 | ----------- | ----------- | ----------- | ----------- | 
 | Amaan Sayyad | 21 | amaansayyad2001@gmail.com | India |
 | Toluwase john | 19| tolujohnofficial@gmail.com | Nigeria |
 
-### **Join us on this incredible journey as we revolutionize education with ThetaQuest! Together, we can unlock the full potential of every learner. 🚀🌍🔓 #ThetaQuest #EdTechRevolution #UnlockingLearningPotential**
----
-
-## Development server for the Thetaquest App workthrough
-- `npm install`
- - Ensure you have truffle installed on your system and Metamask install on your chrome browser
- - run `truffle compile`
- - run `truffle migrate --reset` or `truffle migrate --network theta_testnet`
-
-Before starting the application, first create a database in mongo named "quizzards"
-<br/>
-To start the Server :
-<br/>
- run ` npm install `
-
-Open another terminal
-1. `cd server`<br/>
-run ` npm install `
-2. `node index.js`
-   <br/>
-
-
-To run the application on the browser: Back to your first terminal<br/>
-
-
-4. ` ng serve ` or ` npm start ` <br/>
-5. Navigate to `http://localhost:4200/`.
+**Join us on this incredible journey as we revolutionize education with ThetaQuest! Together, we can unlock the full potential of every learner. 🚀🌍🔓 #ThetaQuest #EdTechRevolution #UnlockingLearningPotential**

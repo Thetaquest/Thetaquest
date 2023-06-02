@@ -85,3 +85,26 @@ _ThetaQuest is just the beginning of our mission to revolutionize education, and
 | Toluwase john | 19| tolujohnofficial@gmail.com | Nigeria |
 
 **Join us on this incredible journey as we revolutionize education with ThetaQuest! Together, we can unlock the full potential of every learner. 🚀🌍🔓 #ThetaQuest #EdTechRevolution #UnlockingLearningPotential**
+
+## Development server for the Thetaquest App workthrough
+- `npm install`
+ - Ensure you have truffle installed on your system and Metamask install on your chrome browser
+ - run `truffle compile`
+ - run `truffle migrate --reset` or `truffle migrate --network theta_testnet`
+
+Before starting the application, first create a database in mongo named "quizzards"
+<br/>
+To start the Server :
+<br/>
+ run ` npm install `
+
+Open another terminal
+1. `cd server`<br/>
+run ` npm install `
+2. `node index.js`
+   <br/>
+
+To run the application on the browser: Back to your first terminal<br/>
+
+4. ` ng serve ` or ` npm start ` <br/>
+5. Navigate to `http://localhost:4200/`.

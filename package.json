@@ -75,7 +75,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "test-web2": "ng test",

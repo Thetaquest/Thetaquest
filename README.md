@@ -3,7 +3,7 @@
 ## **Inspiration** ✨💡🚀
 **The inspiration behind ThetaQuest is to revolutionize the education sector by leveraging the power of blockchain technology, specifically the Theta blockchain.** We were driven by a vision to create an innovative and secure learning platform that combines gamification elements with the transparency and immutability of the blockchain. 
 
-_**Our mission is to provide students with an engaging and immersive educational experience that transcends traditional boundaries. By integrating the decentralized nature of Theta blockchain, we aim to empower learners and foster a sense of ownership and achievement through the use of NFT rewards.**_
+**Our mission is to provide students with an engaging and immersive educational experience that transcends traditional boundaries. By integrating the decentralized nature of Theta blockchain, we aim to empower learners and foster a sense of ownership and achievement through the use of NFT rewards.**
 
 ## **What it does** 🎮📚💪
 ThetaQuest is not just another educational platform, but a gateway to a world of knowledge and excitement. It enables students to embark on thrilling quests, challenging quizzes, and interactive challenges created by passionate teachers. By paying with ThetaNFT or ThetaPass tokens, students gain access to a captivating learning environment where their progress and achievements are seamlessly recorded on the Theta blockchain. 
